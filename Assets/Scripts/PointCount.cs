@@ -6,6 +6,8 @@ public class PointCount : MonoBehaviour
 {
     public int PointTotalCounter = 0;
 
+    public bool canDraw = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,8 +17,9 @@ public class PointCount : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PointTotalCounter == 10)
+        if (PointTotalCounter == 500)
         {
+            canDraw = false;
             Debug.Log("Yli 10 maalauspistettä tehty!");
         }
     }

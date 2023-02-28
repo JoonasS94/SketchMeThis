@@ -9,6 +9,7 @@ public class Line : MonoBehaviour
     private readonly List<Vector2> _points = new List<Vector2>();
 
     private GameObject PointCountObject;
+    private bool PointCountBoolRef;
 
     void Start()
     {
@@ -24,28 +25,39 @@ public class Line : MonoBehaviour
 
     void Update()
     {
-
+        // Check the boolean status in every frame
+        PointCountBoolRef = PointCountObject.GetComponent<PointCount>().canDraw;
     }
 
     public void SetPosition(Vector2 pos)
     {
-        if (!CanAppend(pos)) return;
 
-        _points.Add(pos);
+        if (!CanAppend(pos))
+        {
+            return;
+        }
+        
+        // Allow more drawing if in appropiate position AND more ink still left
+        if (CanAppend(pos) && PointCountBoolRef == true)
+        {
 
-        _renderer.positionCount++;
-        _renderer.SetPosition(_renderer.positionCount - 1, pos);
+            _points.Add(pos);
 
-        PointCountObject.GetComponent<PointCount>().PointTotalCounter += 1;
+            _renderer.positionCount++;
+            _renderer.SetPosition(_renderer.positionCount - 1, pos);
 
-        Debug.Log("PositionCount = " + _renderer.positionCount);
+            PointCountObject.GetComponent<PointCount>().PointTotalCounter += 1;
 
-        _collider.points = _points.ToArray();
+            _collider.points = _points.ToArray();
+        }
     }
 
     private bool CanAppend(Vector2 pos)
     {
-        if (_renderer.positionCount == 0) return true;
+        if (_renderer.positionCount == 0)
+        {
+            return true;
+        }
 
         return Vector2.Distance(_renderer.GetPosition(_renderer.positionCount - 1), pos) > DrawManager.RESOLUTION;
     }
