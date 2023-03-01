@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DrawManager : MonoBehaviour
 {
+    public GameObject drawArea; // specify the game object to draw inside
+
     private Camera _cam;
     [SerializeField] private Line _linePrefab;
     public const float RESOLUTION = .1f;
@@ -12,13 +14,15 @@ public class DrawManager : MonoBehaviour
     private GameObject PointCountObject;
     private bool PointCountBoolRef;
 
-    public float horizontalInput;
-    public float verticalInput;
+    private BoxCollider2D _drawAreaCollider; // the collider of the draw area object
 
     void Start()
     {
         _cam = Camera.main;
         PointCountObject = GameObject.Find("PointCounter");
+
+        // get the collider of the draw area object
+        _drawAreaCollider = drawArea.GetComponent<BoxCollider2D>();
     }
 
     void Update()
@@ -28,17 +32,28 @@ public class DrawManager : MonoBehaviour
 
         Vector2 mousePos = _cam.ScreenToWorldPoint(Input.mousePosition);
 
-        Debug.Log(mousePos.x);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
 
-        // Only allow drawing if the mouse is in the right half of the screen
-        if (Input.GetMouseButtonDown(0) && PointCountBoolRef == true /* && mousePos.x > Screen.width / 2 */)
+        if (Physics.Raycast(ray, out hit))
         {
-            _currentLine = Instantiate(_linePrefab, mousePos, Quaternion.identity);
+            if (hit.transform.tag == "ScoreObjectTag")
+            {
+                Debug.Log("Score!");
+            }
         }
 
-        if (Input.GetMouseButton(0) && PointCountBoolRef == true)
+        if (_drawAreaCollider.OverlapPoint(mousePos) && PointCountBoolRef == true)
         {
-            _currentLine.SetPosition(mousePos);
+            if (Input.GetMouseButtonDown(0))
+            {
+                _currentLine = Instantiate(_linePrefab, mousePos, Quaternion.identity);
+            }
+
+            if (Input.GetMouseButton(0))
+            {
+                _currentLine.SetPosition(mousePos);
+            }
         }
     }
 }
