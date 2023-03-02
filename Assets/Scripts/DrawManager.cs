@@ -14,6 +14,8 @@ public class DrawManager : MonoBehaviour
     private GameObject PointCountObject;
     private bool PointCountBoolRef;
 
+    private GameObject RayCastHitDrawingTargetObject;
+
     private BoxCollider2D _drawAreaCollider; // the collider of the draw area object
 
     void Start()
@@ -39,6 +41,8 @@ public class DrawManager : MonoBehaviour
         {
             if (hit.transform.tag == "ScoreObjectTag")
             {
+                RayCastHitDrawingTargetObject = hit.transform.gameObject;
+                RayCastHitDrawingTargetObject.GetComponent<MeshCollider>().enabled = false;
                 Debug.Log("Score!");
             }
         }
