@@ -282,7 +282,7 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 28790567}
   m_BodyType: 0
-  m_Simulated: 1
+  m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -339,7 +339,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.010875702, y: 0.011251956}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -350,7 +350,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.0217757, y: 1.2846954}
   m_EdgeRadius: 0
 --- !u!1 &236386951
 GameObject:
@@ -1145,7 +1145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drawArea: {fileID: 28790567}
-  _linePrefab: {fileID: 8294989436397135548, guid: 7c26a6e9339b0b046a5be8364be95678, type: 3}
+  _linePrefab: {fileID: 1712383751732034102, guid: 7c26a6e9339b0b046a5be8364be95678, type: 3}
 --- !u!4 &775650470
 Transform:
   m_ObjectHideFlags: 0

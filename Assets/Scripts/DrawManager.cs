@@ -8,7 +8,7 @@ public class DrawManager : MonoBehaviour
 
     private Camera _cam;
     [SerializeField] private Line _linePrefab;
-    public const float RESOLUTION = .1f;
+    public const float RESOLUTION = .005f;
     private Line _currentLine;
 
     private GameObject PointCountObject;
@@ -34,24 +34,17 @@ public class DrawManager : MonoBehaviour
 
         Vector2 mousePos = _cam.ScreenToWorldPoint(Input.mousePosition);
 
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit))
-        {
-            if (hit.transform.tag == "ScoreObjectTag")
-            {
-                RayCastHitDrawingTargetObject = hit.transform.gameObject;
-                RayCastHitDrawingTargetObject.GetComponent<MeshCollider>().enabled = false;
-                Debug.Log("Score!");
-            }
-        }
 
         if (_drawAreaCollider.OverlapPoint(mousePos) && PointCountBoolRef == true)
         {
+
+
             if (Input.GetMouseButtonDown(0))
             {
                 _currentLine = Instantiate(_linePrefab, mousePos, Quaternion.identity);
+
+
             }
 
             if (Input.GetMouseButton(0))

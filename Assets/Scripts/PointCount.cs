@@ -17,10 +17,11 @@ public class PointCount : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PointTotalCounter == 9999)
+        // 125
+        if (PointTotalCounter == 1025)
         {
             canDraw = false;
-            Debug.Log("Yli 10 maalauspistettä tehty!");
+            Debug.Log("Ink loppui! Tarkista pisteet!");
         }
     }
 }
