@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DrawManager : MonoBehaviour
+public class DrawManager1 : MonoBehaviour
 {
     public GameObject drawArea; // specify the game object to draw inside
 
     private Camera _cam;
-    [SerializeField] private Line _linePrefab;
+    [SerializeField] private Line1 _linePrefab;
     public const float RESOLUTION = .005f;
-    private Line _currentLine;
+    private Line1 _currentLine;
 
     private GameObject PointCountObject;
     private bool PointCountBoolRef;
@@ -30,21 +30,16 @@ public class DrawManager : MonoBehaviour
     void Update()
     {
         // Check the boolean status in every frame
-        PointCountBoolRef = PointCountObject.GetComponent<PointCount>().canDraw;
+        // Remember to change <PointCountX> depending on scene
+        PointCountBoolRef = PointCountObject.GetComponent<PointCount1>().canDraw;
 
         Vector2 mousePos = _cam.ScreenToWorldPoint(Input.mousePosition);
 
-
-
         if (_drawAreaCollider.OverlapPoint(mousePos) && PointCountBoolRef == true)
         {
-
-
             if (Input.GetMouseButtonDown(0))
             {
                 _currentLine = Instantiate(_linePrefab, mousePos, Quaternion.identity);
-
-
             }
 
             if (Input.GetMouseButton(0))

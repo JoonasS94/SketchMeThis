@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Line : MonoBehaviour
+public class Line1 : MonoBehaviour
 {
     [SerializeField] private LineRenderer _renderer;
     [SerializeField] private EdgeCollider2D _collider;
@@ -18,7 +19,6 @@ public class Line : MonoBehaviour
     void Start()
     {
         _collider.transform.position -= transform.position;
-
     }
 
     private void Awake()
@@ -31,7 +31,8 @@ public class Line : MonoBehaviour
     void Update()
     {
         // Check the boolean status in every frame
-        PointCountBoolRef = PointCountObject.GetComponent<PointCount>().canDraw;
+        // Remember to change <PointCountX> depending on scene
+        PointCountBoolRef = PointCountObject.GetComponent<PointCount1>().canDraw;
     }
 
     public void SetPosition(Vector2 pos)
@@ -39,7 +40,6 @@ public class Line : MonoBehaviour
 
         if (!CanAppend(pos))
         {
-            Debug.Log("Line.cs Debug rivi 37");
             return;
         }
         
@@ -47,33 +47,29 @@ public class Line : MonoBehaviour
         if (CanAppend(pos) && PointCountBoolRef == true)
         {
             _points.Add(pos);
-            Debug.Log("Line.cs Debug rivi 45");
 
             _renderer.positionCount++;
 
             if (_renderer.positionCount >= 2)
             {
-                Debug.Log("Jatkuvaa vivaa");
-
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
 
                 if (Input.GetMouseButton(0) && Physics.Raycast(ray, out hit))
                 {
-
                     if (hit.transform.tag == "ScoreObjectTag")
                     {
+                        // If visible line hits a score area disable that score parts MeshCollider and add 1 point to pointCalculation
                         RayCastHitDrawingTargetObject = hit.transform.gameObject;
                         RayCastHitDrawingTargetObject.GetComponent<MeshCollider>().enabled = false;
+                        PointCountObject = GameObject.Find("PointCounter");
+                        PointCountObject.GetComponent<PointCount1>().PointTotalCounter += 1;
                         Debug.Log("Score!");
                     }
                 }
             }
 
             _renderer.SetPosition(_renderer.positionCount - 1, pos);
-
-            PointCountObject.GetComponent<PointCount>().PointTotalCounter += 1;
-
             _collider.points = _points.ToArray();
         }
     }
@@ -87,9 +83,11 @@ public class Line : MonoBehaviour
 
         else
         {
-            return Vector2.Distance(_renderer.GetPosition(_renderer.positionCount - 1), pos) > DrawManager.RESOLUTION;
+            // Calculates how much player has drawn and adds it as a sum to DrawingDistanceInTotal
+            PointCountObject.GetComponent<PointCount1>().DrawingDistanceInTotal += (Vector2.Distance(_renderer.GetPosition(_renderer.positionCount - 1), pos));
+
+            // Remember to change DrawManagerX.RESOLUTION depending on scene
+            return Vector2.Distance(_renderer.GetPosition(_renderer.positionCount - 1), pos) > DrawManager1.RESOLUTION;
         }
-
-
     }
 }
