@@ -6,8 +6,8 @@ public class PointCount1 : MonoBehaviour
 {
     public int PointTotalCounter = 0;
     public float DrawingDistanceInTotal = 0;
-
-    public bool canDraw = true;
+    public bool canDraw = false;
+    public bool StopChecking = false;
 
     private void Start()
     {
@@ -17,11 +17,12 @@ public class PointCount1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (DrawingDistanceInTotal >= 27.5f)
+        // Remember to change >= X.Xf depending on scene drawing
+        if (DrawingDistanceInTotal >= 27.5f && StopChecking == false)
         {
+            // Out of ink
             canDraw = false;
-            Debug.Log("Ink loppui! Tarkista pisteet!");
+            StopChecking = true;
         }
     }
 }

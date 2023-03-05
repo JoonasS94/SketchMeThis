@@ -8,12 +8,8 @@ public class Line1 : MonoBehaviour
     [SerializeField] private LineRenderer _renderer;
     [SerializeField] private EdgeCollider2D _collider;
     private readonly List<Vector2> _points = new List<Vector2>();
-
     private GameObject PointCountObject;
-    private bool PointCountBoolRef;
-
     private Camera _cam;
-
     private GameObject RayCastHitDrawingTargetObject;
 
     void Start()
@@ -24,27 +20,20 @@ public class Line1 : MonoBehaviour
     private void Awake()
     {
         _cam = Camera.main;
-        PointCountObject = GameObject.Find("PointCounter");
-    }
-
-
-    void Update()
-    {
-        // Check the boolean status in every frame
-        // Remember to change <PointCountX> depending on scene
-        PointCountBoolRef = PointCountObject.GetComponent<PointCount1>().canDraw;
+        // Remember to change ("PointCounterX") depending on scene
+        PointCountObject = GameObject.Find("PointCounter1");
     }
 
     public void SetPosition(Vector2 pos)
     {
-
         if (!CanAppend(pos))
         {
             return;
         }
-        
+
         // Allow more drawing if in appropiate position AND more ink still left
-        if (CanAppend(pos) && PointCountBoolRef == true)
+        // Remember to change <PointCountX> depending on scene
+        if (CanAppend(pos) && PointCountObject.GetComponent<PointCount1>().canDraw == true)
         {
             _points.Add(pos);
 
@@ -62,9 +51,8 @@ public class Line1 : MonoBehaviour
                         // If visible line hits a score area disable that score parts MeshCollider and add 1 point to pointCalculation
                         RayCastHitDrawingTargetObject = hit.transform.gameObject;
                         RayCastHitDrawingTargetObject.GetComponent<MeshCollider>().enabled = false;
-                        PointCountObject = GameObject.Find("PointCounter");
                         PointCountObject.GetComponent<PointCount1>().PointTotalCounter += 1;
-                        Debug.Log("Score!");
+                        //Debug.Log("Score!");
                     }
                 }
             }
