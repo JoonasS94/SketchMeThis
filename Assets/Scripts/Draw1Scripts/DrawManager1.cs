@@ -19,6 +19,8 @@ public class DrawManager1 : MonoBehaviour
     private TMP_Text StartTextTMP;
     private GameObject CompareTextGameObject;
     private TMP_Text CompareTextTMP;
+    private GameObject CompareText2GameObject;
+    private TMP_Text CompareText2TMP;
 
     private GameObject DrawingObject;
 
@@ -27,6 +29,8 @@ public class DrawManager1 : MonoBehaviour
     // Remember to adjust value for each drawing
     private float ratioNumber = 4.166667f;
     private int RoundingToInt;
+
+    private bool CompareResultsStarted = false;
 
     void Start()
     {
@@ -42,6 +46,8 @@ public class DrawManager1 : MonoBehaviour
         StartTextTMP = StartTextGameObject.GetComponent<TextMeshProUGUI>();
         CompareTextGameObject = GameObject.Find("CompareText");
         CompareTextTMP = CompareTextGameObject.GetComponent<TextMeshProUGUI>();
+        CompareText2GameObject = GameObject.Find("CompareText2");
+        CompareText2TMP = CompareText2GameObject.GetComponent<TextMeshProUGUI>();
 
         // Coroutine of showing original drawing started
         StartCoroutine(StartGamePlay());
@@ -66,8 +72,9 @@ public class DrawManager1 : MonoBehaviour
         }
 
         // When player has finished drawing start comparing/ scoring process
-        if (PointCountObject.GetComponent<PointCount1>().canDraw == false && PointCountObject.GetComponent<PointCount1>().StopChecking == true)
+        if (PointCountObject.GetComponent<PointCount1>().canDraw == false && PointCountObject.GetComponent<PointCount1>().StopChecking == true && CompareResultsStarted == false)
         {
+            CompareResultsStarted = true;
             StartCoroutine(CompareResults());
         }
     }
@@ -76,7 +83,7 @@ public class DrawManager1 : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         StartTextGameObject.gameObject.SetActive(false);
-        StartTextTMP.text = "Time to draw yourself!";
+        StartTextTMP.text = "Now draw it yourself!";
 
         DrawingObject = GameObject.Find("DrawingObject");
         MeshRenderer[] meshRenderers = DrawingObject.GetComponentsInChildren<MeshRenderer>();
@@ -116,12 +123,52 @@ public class DrawManager1 : MonoBehaviour
             childRenderMeshes.enabled = true;
         }
 
+        // Waiting amount so that player (may) get excited themselves
+        yield return new WaitForSeconds(2.5f);
+
         // Remember to change <PointCountX> depending on scene
         DrawingResult = (PointCountObject.GetComponent<PointCount1>().PointTotalCounter * ratioNumber);
         RoundingToInt = Mathf.RoundToInt(DrawingResult);
         // Transfer score data to permanent score history GameObject
         // Remember to change ("ScoreX) && <DrawScoreX> && drawXScore depending on scene
         GameObject.Find("Score1").GetComponent<DrawScore1>().draw1Score = RoundingToInt;
-        Debug.Log("Score:" + RoundingToInt);
+        //Debug.Log("Score:" + RoundingToInt);
+
+        CompareTextGameObject.gameObject.SetActive(false);
+
+        CompareText2TMP.text = RoundingToInt + " / 100";
+        CompareText2GameObject.GetComponent<TextMeshProUGUI>().enabled = true;
+
+        yield return new WaitForSeconds(2.5f);
+
+        // 90 - 100 Score
+        if (RoundingToInt >= 90)
+        {
+            CompareText2TMP.text = RoundingToInt + " / 100" + " Fantastic work!";
+        }
+
+        // 66 - 89 Score
+        if (RoundingToInt >= 66 && RoundingToInt <= 89)
+        {
+            CompareText2TMP.text = RoundingToInt + " / 100" + " Great job!";
+        }
+
+        // 30 - 65 Score
+        if (RoundingToInt >= 30 && RoundingToInt <= 65)
+        {
+            CompareText2TMP.text = RoundingToInt + " / 100" + " Okay";
+        }
+
+        // 10 - 29 Score
+        if (RoundingToInt >= 10 && RoundingToInt <= 29)
+        {
+            CompareText2TMP.text = RoundingToInt + " / 100" + " Could be better";
+        }
+
+        // 0 - 9 Score
+        if (RoundingToInt >= 0 && RoundingToInt <= 9)
+        {
+            CompareText2TMP.text = RoundingToInt + " / 100" + " Try again";
+        }
     }
 }
