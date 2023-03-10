@@ -8,7 +8,7 @@ public class DrawManager1 : MonoBehaviour
     // specify the game object to draw inside
     private GameObject drawArea;
     // the collider of the draw area object
-    private BoxCollider2D _drawAreaCollider;
+    private PolygonCollider2D _drawAreaCollider;
     private Camera _cam;
     [SerializeField] private Line1 _linePrefab;
     public const float RESOLUTION = .005f;
@@ -37,7 +37,7 @@ public class DrawManager1 : MonoBehaviour
         _cam = Camera.main;
         drawArea = GameObject.Find("DrawingArea");
         // get the collider of the draw area object
-        _drawAreaCollider = drawArea.GetComponent<BoxCollider2D>();
+        _drawAreaCollider = drawArea.GetComponent<PolygonCollider2D>();
 
         // Remember to change ("PointCounterX") depending on scene
         PointCountObject = GameObject.Find("PointCounter1");
@@ -128,6 +128,13 @@ public class DrawManager1 : MonoBehaviour
 
         // Remember to change <PointCountX> depending on scene
         DrawingResult = (PointCountObject.GetComponent<PointCount1>().PointTotalCounter * ratioNumber);
+
+        // To prevent over 100 point (very unlikely) cases
+        if (DrawingResult > 100)
+        {
+            DrawingResult = 100;
+        }
+
         RoundingToInt = Mathf.RoundToInt(DrawingResult);
         // Transfer score data to permanent score history GameObject
         // Remember to change ("ScoreX) && <DrawScoreX> && drawXScore depending on scene
@@ -144,31 +151,31 @@ public class DrawManager1 : MonoBehaviour
         // 90 - 100 Score
         if (RoundingToInt >= 90)
         {
-            CompareText2TMP.text = RoundingToInt + " / 100" + " Fantastic work!";
+            CompareText2TMP.text = RoundingToInt + " / 100" + "\nFantastic work!";
         }
 
         // 66 - 89 Score
         if (RoundingToInt >= 66 && RoundingToInt <= 89)
         {
-            CompareText2TMP.text = RoundingToInt + " / 100" + " Great job!";
+            CompareText2TMP.text = RoundingToInt + " / 100" + "\nGreat job!";
         }
 
         // 30 - 65 Score
         if (RoundingToInt >= 30 && RoundingToInt <= 65)
         {
-            CompareText2TMP.text = RoundingToInt + " / 100" + " Okay";
+            CompareText2TMP.text = RoundingToInt + " / 100" + "\nOkay";
         }
 
         // 10 - 29 Score
         if (RoundingToInt >= 10 && RoundingToInt <= 29)
         {
-            CompareText2TMP.text = RoundingToInt + " / 100" + " Could be better";
+            CompareText2TMP.text = RoundingToInt + " / 100" + "\nCould be better";
         }
 
         // 0 - 9 Score
         if (RoundingToInt >= 0 && RoundingToInt <= 9)
         {
-            CompareText2TMP.text = RoundingToInt + " / 100" + " Try again";
+            CompareText2TMP.text = RoundingToInt + " / 100" + "\nTry again";
         }
     }
 }
