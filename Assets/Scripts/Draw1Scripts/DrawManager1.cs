@@ -70,8 +70,8 @@ public class DrawManager1 : MonoBehaviour
         // Stop drawing pressed
         if (_stopDrawingAreaCollider.OverlapPoint(mousePos) && PointCountObject.GetComponent<PointCount1>().canDraw == true)
         {
-            // Remember to change <PointCountX> depending on scene && DrawingDistanceInTotal = XX depending on value given in PointCountX.cs
-            PointCountObject.GetComponent<PointCount1>().DrawingDistanceInTotal = 28;
+            // Remember to change <PointCountX> depending on scene
+            PointCountObject.GetComponent<PointCount1>().DrawingDistanceInTotal = 999;
         }
 
 
