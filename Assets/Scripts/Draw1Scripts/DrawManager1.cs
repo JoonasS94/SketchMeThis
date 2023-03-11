@@ -32,12 +32,21 @@ public class DrawManager1 : MonoBehaviour
 
     private bool CompareResultsStarted = false;
 
+    // specify the game object to stop drawing
+    private GameObject stopDrawingArea;
+    // the collider of the stop drawing area object
+    private PolygonCollider2D _stopDrawingAreaCollider;
+
     void Start()
     {
         _cam = Camera.main;
-        drawArea = GameObject.Find("DrawingArea");
         // get the collider of the draw area object
+        drawArea = GameObject.Find("DrawingArea");
         _drawAreaCollider = drawArea.GetComponent<PolygonCollider2D>();
+
+        // get the collider of the stop drawing area object
+        stopDrawingArea = GameObject.Find("StopDrawingCollider");
+        _stopDrawingAreaCollider = stopDrawingArea.GetComponent<PolygonCollider2D>();
 
         // Remember to change ("PointCounterX") depending on scene
         PointCountObject = GameObject.Find("PointCounter1");
@@ -58,6 +67,16 @@ public class DrawManager1 : MonoBehaviour
         Vector2 mousePos = _cam.ScreenToWorldPoint(Input.mousePosition);
 
         // Remember to change <PointCountX> depending on scene
+        // Stop drawing pressed
+        if (_stopDrawingAreaCollider.OverlapPoint(mousePos) && PointCountObject.GetComponent<PointCount1>().canDraw == true)
+        {
+            // Remember to change <PointCountX> depending on scene && DrawingDistanceInTotal = XX depending on value given in PointCountX.cs
+            PointCountObject.GetComponent<PointCount1>().DrawingDistanceInTotal = 28;
+        }
+
+
+        // Remember to change <PointCountX> depending on scene
+        // Drawing
         if (_drawAreaCollider.OverlapPoint(mousePos) && PointCountObject.GetComponent<PointCount1>().canDraw == true)
         {
             if (Input.GetMouseButtonDown(0))
@@ -72,6 +91,7 @@ public class DrawManager1 : MonoBehaviour
         }
 
         // When player has finished drawing start comparing/ scoring process
+        // Remember to change <PointCountX>.canDraw && <PointCountX>.canDraw depending on scene
         if (PointCountObject.GetComponent<PointCount1>().canDraw == false && PointCountObject.GetComponent<PointCount1>().StopChecking == true && CompareResultsStarted == false)
         {
             CompareResultsStarted = true;
