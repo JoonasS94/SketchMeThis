@@ -37,6 +37,13 @@ public class DrawManager1 : MonoBehaviour
     // the collider of the stop drawing area object
     private PolygonCollider2D _stopDrawingAreaCollider;
 
+    // specify the game object to pause game
+    private GameObject pauseGameArea;
+    // the collider of the stop drawing area object
+    private PolygonCollider2D _pauseGameAreaCollider;
+
+
+
     void Start()
     {
         _cam = Camera.main;
@@ -47,6 +54,10 @@ public class DrawManager1 : MonoBehaviour
         // get the collider of the stop drawing area object
         stopDrawingArea = GameObject.Find("StopDrawingCollider");
         _stopDrawingAreaCollider = stopDrawingArea.GetComponent<PolygonCollider2D>();
+
+        // get the collider of the stop drawing area object
+        pauseGameArea = GameObject.Find("PauseGameCollider");
+        _pauseGameAreaCollider = pauseGameArea.GetComponent<PolygonCollider2D>();
 
         // Remember to change ("PointCounterX") depending on scene
         PointCountObject = GameObject.Find("PointCounter1");
@@ -65,6 +76,14 @@ public class DrawManager1 : MonoBehaviour
     void Update()
     {
         Vector2 mousePos = _cam.ScreenToWorldPoint(Input.mousePosition);
+
+        // Remember to change <PointCountX> depending on scene
+        // Pause game pressed
+        if (_pauseGameAreaCollider.OverlapPoint(mousePos))
+        {
+            // Is there really a need for pause function?
+            //StartCoroutine(PauseGame());
+        }
 
         // Remember to change <PointCountX> depending on scene
         // Stop drawing pressed
@@ -98,6 +117,14 @@ public class DrawManager1 : MonoBehaviour
             StartCoroutine(CompareResults());
         }
     }
+
+    // Is there really a need for pause function?
+    /*IEnumerator PauseGame()
+    {
+        yield return new WaitForSeconds(3);
+        PointCountObject.GetComponent<PointCount1>().canDraw = false;
+        pauseGameArea.gameObject.SetActive(true);
+    }*/
 
     IEnumerator StartGamePlay()
     {
