@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class DrawManager1 : MonoBehaviour
 {
@@ -41,8 +42,11 @@ public class DrawManager1 : MonoBehaviour
     private GameObject pauseGameArea;
     // the collider of the stop drawing area object
     private PolygonCollider2D _pauseGameAreaCollider;
+    public GameObject PauseScreenGameObject;
 
+    public Slider inkLeftSliderFill;
 
+    private GameObject InkLeftPercentageGameObject;
 
     void Start()
     {
@@ -69,6 +73,8 @@ public class DrawManager1 : MonoBehaviour
         CompareText2GameObject = GameObject.Find("CompareText2");
         CompareText2TMP = CompareText2GameObject.GetComponent<TextMeshProUGUI>();
 
+        InkLeftPercentageGameObject = GameObject.Find("InkLeftPercentage");
+
         // Coroutine of showing original drawing started
         StartCoroutine(StartGamePlay());
     }
@@ -79,15 +85,14 @@ public class DrawManager1 : MonoBehaviour
 
         // Remember to change <PointCountX> depending on scene
         // Pause game pressed
-        if (_pauseGameAreaCollider.OverlapPoint(mousePos))
+        if (Input.GetMouseButtonDown(0) && _pauseGameAreaCollider.OverlapPoint(mousePos))
         {
-            // Is there really a need for pause function?
-            //StartCoroutine(PauseGame());
+            StartCoroutine(PauseGame());
         }
 
         // Remember to change <PointCountX> depending on scene
-        // Stop drawing pressed
-        if (_stopDrawingAreaCollider.OverlapPoint(mousePos) && PointCountObject.GetComponent<PointCount1>().canDraw == true)
+        // Stop drawing pressed while game is active
+        if (Input.GetMouseButtonDown(0) && _stopDrawingAreaCollider.OverlapPoint(mousePos) && PointCountObject.GetComponent<PointCount1>().canDraw == true && PointCountObject.GetComponent<PointCount1>().gamePaused == false)
         {
             // Remember to change <PointCountX> depending on scene
             PointCountObject.GetComponent<PointCount1>().DrawingDistanceInTotal = 999;
@@ -96,7 +101,7 @@ public class DrawManager1 : MonoBehaviour
 
         // Remember to change <PointCountX> depending on scene
         // Drawing
-        if (_drawAreaCollider.OverlapPoint(mousePos) && PointCountObject.GetComponent<PointCount1>().canDraw == true)
+        if (_drawAreaCollider.OverlapPoint(mousePos) && PointCountObject.GetComponent<PointCount1>().canDraw == true && PointCountObject.GetComponent<PointCount1>().gamePaused == false)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -118,13 +123,16 @@ public class DrawManager1 : MonoBehaviour
         }
     }
 
-    // Is there really a need for pause function?
-    /*IEnumerator PauseGame()
+    IEnumerator PauseGame()
     {
-        yield return new WaitForSeconds(3);
-        PointCountObject.GetComponent<PointCount1>().canDraw = false;
-        pauseGameArea.gameObject.SetActive(true);
-    }*/
+        Debug.Log("PauseGame IEnumerator active. Pausing the game");
+        inkLeftSliderFill.gameObject.SetActive(false);
+        InkLeftPercentageGameObject.gameObject.SetActive(false);
+        PauseScreenGameObject.gameObject.SetActive(true);
+        PointCountObject.GetComponent<PointCount1>().gamePaused = true;
+        yield return new WaitForSeconds(0.25f);
+
+    }
 
     IEnumerator StartGamePlay()
     {

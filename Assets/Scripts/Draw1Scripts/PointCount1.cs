@@ -10,6 +10,7 @@ public class PointCount1 : MonoBehaviour
     public float DrawingDistanceInTotal = 0;
     public bool canDraw = false;
     public bool StopChecking = false;
+    public bool gamePaused = false;
 
     private GameObject InkLeftPercentageGameObject;
     private TMP_Text InkLeftPercentageTextTMP;
