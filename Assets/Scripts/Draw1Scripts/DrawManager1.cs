@@ -39,10 +39,18 @@ public class DrawManager1 : MonoBehaviour
     private PolygonCollider2D _stopDrawingAreaCollider;
 
     // specify the game object to pause game
-    private GameObject pauseGameArea;
-    // the collider of the stop drawing area object
+    public GameObject PauseScreenColliderGameObject;
+    // the collider of the pause game object
     private PolygonCollider2D _pauseGameAreaCollider;
+
+    // specify the game object to pause game
     public GameObject PauseScreenGameObject;
+    // specify the game object to disable pause game (continue drawing)
+    public GameObject DisablePauseScreenGameObject;
+    // the collider of the stop drawing area object
+    private PolygonCollider2D _disablePauseGameAreaCollider;
+
+    // the collider of the disable 
 
     public Slider inkLeftSliderFill;
 
@@ -59,9 +67,11 @@ public class DrawManager1 : MonoBehaviour
         stopDrawingArea = GameObject.Find("StopDrawingCollider");
         _stopDrawingAreaCollider = stopDrawingArea.GetComponent<PolygonCollider2D>();
 
-        // get the collider of the stop drawing area object
-        pauseGameArea = GameObject.Find("PauseGameCollider");
-        _pauseGameAreaCollider = pauseGameArea.GetComponent<PolygonCollider2D>();
+        // get the collider of the pause game area object
+        _pauseGameAreaCollider = PauseScreenColliderGameObject.GetComponent<PolygonCollider2D>();
+
+        // get the collider of the disable pause game (continue drawing) area object
+        _disablePauseGameAreaCollider = DisablePauseScreenGameObject.GetComponent<PolygonCollider2D>();
 
         // Remember to change ("PointCounterX") depending on scene
         PointCountObject = GameObject.Find("PointCounter1");
@@ -88,6 +98,13 @@ public class DrawManager1 : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && _pauseGameAreaCollider.OverlapPoint(mousePos))
         {
             StartCoroutine(PauseGame());
+        }
+
+        // Remember to change <PointCountX> depending on scene
+        // Disable Pause game (continue drawing phase) pressed
+        if (Input.GetMouseButtonDown(0) && _disablePauseGameAreaCollider.OverlapPoint(mousePos))
+        {
+            StartCoroutine(DisablePauseGame());
         }
 
         // Remember to change <PointCountX> depending on scene
@@ -130,6 +147,17 @@ public class DrawManager1 : MonoBehaviour
         InkLeftPercentageGameObject.gameObject.SetActive(false);
         PauseScreenGameObject.gameObject.SetActive(true);
         PointCountObject.GetComponent<PointCount1>().gamePaused = true;
+        yield return new WaitForSeconds(0.25f);
+
+    }
+
+    IEnumerator DisablePauseGame()
+    {
+        Debug.Log("DisablePauseGame IEnumerator active. Continuing the game");
+        inkLeftSliderFill.gameObject.SetActive(true);
+        InkLeftPercentageGameObject.gameObject.SetActive(true);
+        PauseScreenGameObject.gameObject.SetActive(false);
+        PointCountObject.GetComponent<PointCount1>().gamePaused = false;
         yield return new WaitForSeconds(0.25f);
 
     }
