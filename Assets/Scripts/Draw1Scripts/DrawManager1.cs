@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DrawManager1 : MonoBehaviour
 {
@@ -10,27 +11,27 @@ public class DrawManager1 : MonoBehaviour
     private GameObject drawArea;
     // the collider of the draw area object
     private PolygonCollider2D _drawAreaCollider;
+
     private Camera _cam;
     [SerializeField] private Line1 _linePrefab;
     public const float RESOLUTION = .005f;
     private Line1 _currentLine;
     private GameObject PointCountObject;
-
     private GameObject StartTextGameObject;
     private TMP_Text StartTextTMP;
     private GameObject CompareTextGameObject;
-    private TMP_Text CompareTextTMP;
     private GameObject CompareText2GameObject;
     private TMP_Text CompareText2TMP;
-
     private GameObject DrawingObject;
-
     private float DrawingResult;
+    public Slider inkLeftSliderFill;
+    private GameObject InkLeftPercentageGameObject;
+
     // 100 / amount of mesh colliders in drawing
     // Remember to adjust value for each drawing
     private float ratioNumber = 4.166667f;
-    private int RoundingToInt;
 
+    private int RoundingToInt;
     private bool CompareResultsStarted = false;
 
     // specify the game object to stop drawing
@@ -50,11 +51,15 @@ public class DrawManager1 : MonoBehaviour
     // the collider of the stop drawing area object
     private PolygonCollider2D _disablePauseGameAreaCollider;
 
-    // the collider of the disable 
+    // specify the game object to disable pause game (continue drawing)
+    public GameObject RestartSceneScreenGameObject;
+    // the collider of the stop drawing area object
+    private PolygonCollider2D _restartSceneGameAreaCollider;
 
-    public Slider inkLeftSliderFill;
-
-    private GameObject InkLeftPercentageGameObject;
+    // specify the game object to disable pause game (continue drawing)
+    public GameObject MainMenuScreenGameObject;
+    // the collider of the stop drawing area object
+    private PolygonCollider2D _mainMenuSceneGameAreaCollider;
 
     void Start()
     {
@@ -73,16 +78,20 @@ public class DrawManager1 : MonoBehaviour
         // get the collider of the disable pause game (continue drawing) area object
         _disablePauseGameAreaCollider = DisablePauseScreenGameObject.GetComponent<PolygonCollider2D>();
 
+        // get the collider of the restart scene game area object
+        _restartSceneGameAreaCollider = RestartSceneScreenGameObject.GetComponent<PolygonCollider2D>();
+
+        // get the collider of the main menu game area object
+        _mainMenuSceneGameAreaCollider = MainMenuScreenGameObject.GetComponent<PolygonCollider2D>();
+
         // Remember to change ("PointCounterX") depending on scene
         PointCountObject = GameObject.Find("PointCounter1");
 
         StartTextGameObject = GameObject.Find("StartText");
         StartTextTMP = StartTextGameObject.GetComponent<TextMeshProUGUI>();
         CompareTextGameObject = GameObject.Find("CompareText");
-        CompareTextTMP = CompareTextGameObject.GetComponent<TextMeshProUGUI>();
         CompareText2GameObject = GameObject.Find("CompareText2");
         CompareText2TMP = CompareText2GameObject.GetComponent<TextMeshProUGUI>();
-
         InkLeftPercentageGameObject = GameObject.Find("InkLeftPercentage");
 
         // Coroutine of showing original drawing started
@@ -94,17 +103,29 @@ public class DrawManager1 : MonoBehaviour
         Vector2 mousePos = _cam.ScreenToWorldPoint(Input.mousePosition);
 
         // Remember to change <PointCountX> depending on scene
-        // Pause game pressed
+        // Pause game button pressed
         if (Input.GetMouseButtonDown(0) && _pauseGameAreaCollider.OverlapPoint(mousePos))
         {
             StartCoroutine(PauseGame());
         }
 
-        // Remember to change <PointCountX> depending on scene
-        // Disable Pause game (continue drawing phase) pressed
+        // Disable Pause game (continue drawing phase) button pressed
         if (Input.GetMouseButtonDown(0) && _disablePauseGameAreaCollider.OverlapPoint(mousePos))
         {
             StartCoroutine(DisablePauseGame());
+        }
+
+        // Restart scene button pressed
+        if (Input.GetMouseButtonDown(0) && _restartSceneGameAreaCollider.OverlapPoint(mousePos))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        // Return to main menu button pressed
+        if (Input.GetMouseButtonDown(0) && _mainMenuSceneGameAreaCollider.OverlapPoint(mousePos))
+        {
+            // NOTE: Gives error since work on main menu scene has not been yet started
+            SceneManager.LoadScene("MainMenu");
         }
 
         // Remember to change <PointCountX> depending on scene
