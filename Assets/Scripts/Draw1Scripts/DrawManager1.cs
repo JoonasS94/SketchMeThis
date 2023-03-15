@@ -104,7 +104,7 @@ public class DrawManager1 : MonoBehaviour
 
         // Remember to change <PointCountX> depending on scene
         // Pause game button pressed
-        if (Input.GetMouseButtonDown(0) && _pauseGameAreaCollider.OverlapPoint(mousePos))
+        if (Input.GetMouseButtonDown(0) && _pauseGameAreaCollider.OverlapPoint(mousePos) && PointCountObject.GetComponent<PointCount1>().canDraw == true)
         {
             StartCoroutine(PauseGame());
         }
