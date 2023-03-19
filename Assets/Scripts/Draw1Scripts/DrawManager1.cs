@@ -45,7 +45,7 @@ public class DrawManager1 : MonoBehaviour
     private PolygonCollider2D _nextDrawingAreaCollider;
 
     // specify the game object to pause game
-    public GameObject PauseScreenColliderGameObject;
+    public GameObject PauseButtonColliderGameObject;
     // the collider of the pause game object
     private PolygonCollider2D _pauseGameAreaCollider;
 
@@ -83,7 +83,7 @@ public class DrawManager1 : MonoBehaviour
         _nextDrawingAreaCollider = nextDrawingArea.GetComponent<PolygonCollider2D>();
 
         // get the collider of the pause game area object
-        _pauseGameAreaCollider = PauseScreenColliderGameObject.GetComponent<PolygonCollider2D>();
+        _pauseGameAreaCollider = PauseButtonColliderGameObject.GetComponent<PolygonCollider2D>();
 
         // get the collider of the disable pause game (continue drawing) area object
         _disablePauseGameAreaCollider = DisablePauseScreenGameObject.GetComponent<PolygonCollider2D>();
@@ -300,6 +300,8 @@ public class DrawManager1 : MonoBehaviour
         {
             CompareText2TMP.text = RoundingToInt + " / 100" + "\nYou can do better";
         }
+
+        yield return new WaitForSeconds(0.5f);
 
         nextDrawingArea.SetActive(true);
     }
