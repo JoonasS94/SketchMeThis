@@ -22,6 +22,13 @@ public class MainMenuManager : MonoBehaviour
     // the collider of the quit area object
     private PolygonCollider2D _quitAreaCollider;
 
+    public GameObject CreditsScreen;
+    // specify the game object to close credits scene
+    public GameObject quitCreditsScreenButton;
+    // the collider of the quit area object
+    private PolygonCollider2D _quitCreditsAreaCollider;
+
+
     void Start()
     {
         _cam = Camera.main;
@@ -37,6 +44,9 @@ public class MainMenuManager : MonoBehaviour
         // get the collider of the quit area object
         quitArea = GameObject.Find("QuitArea");
         _quitAreaCollider = quitArea.GetComponent<PolygonCollider2D>();
+
+        // get the collider of the quit credits area object
+        _quitCreditsAreaCollider = quitCreditsScreenButton.GetComponent<PolygonCollider2D>();
     }
 
     void Update()
@@ -52,12 +62,28 @@ public class MainMenuManager : MonoBehaviour
         // Credits pressed
         if (Input.GetMouseButtonDown(0) && _creditsAreaCollider.OverlapPoint(mousePos))
         {
-            Debug.Log("Credits");
+            playArea.SetActive(false);
+            creditsArea.SetActive(false);
+            quitArea.SetActive(false);
+            CreditsScreen.SetActive(true);
+            quitCreditsScreenButton.SetActive(true);
+        }
+
+        // Quit Credits pressed
+        if (Input.GetMouseButtonDown(0) && _quitCreditsAreaCollider.OverlapPoint(mousePos))
+        {
+            CreditsScreen.SetActive(false);
+            quitCreditsScreenButton.SetActive(false);
+            playArea.SetActive(true);
+            creditsArea.SetActive(true);
+            quitArea.SetActive(true);
+
         }
 
         // Quit pressed
         if (Input.GetMouseButtonDown(0) && _quitAreaCollider.OverlapPoint(mousePos))
         {
+            Debug.Log("qUIT");
             Application.Quit();
         }
     }
