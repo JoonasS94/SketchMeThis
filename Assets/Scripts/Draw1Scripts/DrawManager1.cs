@@ -39,6 +39,11 @@ public class DrawManager1 : MonoBehaviour
     // the collider of the stop drawing area object
     private PolygonCollider2D _stopDrawingAreaCollider;
 
+    // specify the game object to enter next drawing
+    public GameObject nextDrawingArea;
+    // the collider of the stop drawing area object
+    private PolygonCollider2D _nextDrawingAreaCollider;
+
     // specify the game object to pause game
     public GameObject PauseScreenColliderGameObject;
     // the collider of the pause game object
@@ -61,6 +66,8 @@ public class DrawManager1 : MonoBehaviour
     // the collider of the stop drawing area object
     private PolygonCollider2D _mainMenuSceneGameAreaCollider;
 
+
+
     void Start()
     {
         _cam = Camera.main;
@@ -71,6 +78,9 @@ public class DrawManager1 : MonoBehaviour
         // get the collider of the stop drawing area object
         stopDrawingArea = GameObject.Find("StopDrawingCollider");
         _stopDrawingAreaCollider = stopDrawingArea.GetComponent<PolygonCollider2D>();
+
+        // get the collider of the next drawing game area object
+        _nextDrawingAreaCollider = nextDrawingArea.GetComponent<PolygonCollider2D>();
 
         // get the collider of the pause game area object
         _pauseGameAreaCollider = PauseScreenColliderGameObject.GetComponent<PolygonCollider2D>();
@@ -126,6 +136,13 @@ public class DrawManager1 : MonoBehaviour
         {
             // NOTE: Gives error since work on main menu scene has not been yet started
             SceneManager.LoadScene("MainMenu");
+        }
+
+        // Next drawing button pressed
+        if (Input.GetMouseButtonDown(0) && _nextDrawingAreaCollider.OverlapPoint(mousePos))
+        {
+            // NOTE: Gives error since work on next scene has not been yet started
+            SceneManager.LoadScene("Draw2");
         }
 
         // Remember to change <PointCountX> depending on scene
@@ -216,6 +233,8 @@ public class DrawManager1 : MonoBehaviour
 
     IEnumerator CompareResults()
     {
+        stopDrawingArea.SetActive(false);
+
         yield return new WaitForSeconds(0.25f);
         CompareTextGameObject.GetComponent<TextMeshProUGUI>().enabled = true;
 
@@ -279,7 +298,9 @@ public class DrawManager1 : MonoBehaviour
         // 0 - 9 Score
         if (RoundingToInt >= 0 && RoundingToInt <= 9)
         {
-            CompareText2TMP.text = RoundingToInt + " / 100" + "\nTry again";
+            CompareText2TMP.text = RoundingToInt + " / 100" + "\nYou can do better";
         }
+
+        nextDrawingArea.SetActive(true);
     }
 }

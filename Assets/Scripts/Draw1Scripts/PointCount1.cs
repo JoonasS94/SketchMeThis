@@ -50,8 +50,7 @@ public class PointCount1 : MonoBehaviour
             InkLeftPercentageTextTMP.text = inkLeftCalculationDec + " %";
         }
 
-        // Remember to change >= X.Xf depending on scene drawing
-        if (DrawingDistanceInTotal >= 27.5f && StopChecking == false)
+        if (DrawingDistanceInTotal >= MaximumDrawingDistance && StopChecking == false)
         {
             // Out of ink
             canDraw = false;
