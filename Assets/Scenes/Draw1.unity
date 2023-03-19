@@ -240,6 +240,7 @@ Transform:
   m_Children:
   - {fileID: 1215105133}
   - {fileID: 978642432}
+  - {fileID: 1533550143}
   m_Father: {fileID: 769348176}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1940,7 +1941,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _linePrefab: {fileID: 6732282757935456567, guid: 7c26a6e9339b0b046a5be8364be95678, type: 3}
   inkLeftSliderFill: {fileID: 1148377267}
-  PauseScreenColliderGameObject: {fileID: 978642431}
+  nextDrawingArea: {fileID: 1533550142}
+  PauseButtonColliderGameObject: {fileID: 978642431}
   PauseScreenGameObject: {fileID: 1644257973}
   DisablePauseScreenGameObject: {fileID: 403736536}
   RestartSceneScreenGameObject: {fileID: 897955219}
@@ -2631,6 +2633,77 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1378850649}
   m_CullTransparentMesh: 1
+--- !u!1 &1533550142
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1533550143}
+  - component: {fileID: 1533550144}
+  m_Layer: 0
+  m_Name: NextDrawingCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1533550143
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533550142}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 28790571}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &1533550144
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533550142}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.5320841, y: 0.4375787}
+      - {x: -0.5239062, y: 0.46446866}
+      - {x: -0.5172125, y: 0.51275563}
+      - {x: -0.5201383, y: 0.6829022}
+      - {x: -0.5444306, y: 0.7172741}
+      - {x: -0.6261906, y: 0.69701463}
+      - {x: -0.7643125, y: 0.65650415}
+      - {x: -0.87725747, y: 0.61906195}
+      - {x: -0.8943534, y: 0.58765155}
+      - {x: -0.90151125, y: 0.48421666}
+      - {x: -0.9005545, y: 0.38103735}
+      - {x: -0.8898161, y: 0.3371749}
+      - {x: -0.8702921, y: 0.3163165}
+      - {x: -0.5485337, y: 0.41947246}
 --- !u!4 &1592243628 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 98eac08fd573d2141905f0ba52716d5b, type: 3}
