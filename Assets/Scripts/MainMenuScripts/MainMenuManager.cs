@@ -28,6 +28,15 @@ public class MainMenuManager : MonoBehaviour
     // the collider of the quit area object
     private PolygonCollider2D _quitCreditsAreaCollider;
 
+    public GameObject TutorialPromptScreen;
+    // specify the game object to start tutorial scene
+    public GameObject TutorialPromptYesScreenButton;
+    // the collider of the start tutorial area object
+    private PolygonCollider2D _TutorialPromptYesAreaCollider;
+    // specify the game object to start drawing scene
+    public GameObject TutorialPromptNoScreenButton;
+    // the collider of the quit area object
+    private PolygonCollider2D _TutorialPromptNoAreaCollider;
 
     void Start()
     {
@@ -37,16 +46,22 @@ public class MainMenuManager : MonoBehaviour
         playArea = GameObject.Find("PlayArea");
         _playAreaCollider = playArea.GetComponent<PolygonCollider2D>();
 
+        // get the collider of the start drawing scene area object
+        _TutorialPromptYesAreaCollider = TutorialPromptYesScreenButton.GetComponent<PolygonCollider2D>();
+
+        // get the collider of the start drawing scene area object
+        _TutorialPromptNoAreaCollider = TutorialPromptNoScreenButton.GetComponent<PolygonCollider2D>();
+
         // get the collider of the credits area object
         creditsArea = GameObject.Find("CreditsArea");
         _creditsAreaCollider = creditsArea.GetComponent<PolygonCollider2D>();
 
+        // get the collider of the quit credits area object
+        _quitCreditsAreaCollider = quitCreditsScreenButton.GetComponent<PolygonCollider2D>();
+
         // get the collider of the quit area object
         quitArea = GameObject.Find("QuitArea");
         _quitAreaCollider = quitArea.GetComponent<PolygonCollider2D>();
-
-        // get the collider of the quit credits area object
-        _quitCreditsAreaCollider = quitCreditsScreenButton.GetComponent<PolygonCollider2D>();
     }
 
     void Update()
@@ -56,7 +71,25 @@ public class MainMenuManager : MonoBehaviour
         // Play pressed
         if (Input.GetMouseButtonDown(0) && _playAreaCollider.OverlapPoint(mousePos))
         {
-            Debug.Log("Play");
+            playArea.SetActive(false);
+            creditsArea.SetActive(false);
+            quitArea.SetActive(false);
+            TutorialPromptScreen.SetActive(true);
+            TutorialPromptYesScreenButton.SetActive(true);
+            TutorialPromptNoScreenButton.SetActive(true);
+        }
+
+        // Tutorial Prompt Yes pressed
+        if (Input.GetMouseButtonDown(0) && _TutorialPromptYesAreaCollider.OverlapPoint(mousePos))
+        {
+            Debug.Log("Yes");
+        }
+
+        // Tutorial Prompt No pressed
+        if (Input.GetMouseButtonDown(0) && _TutorialPromptNoAreaCollider.OverlapPoint(mousePos))
+        {
+            // Load drawing scene 1
+            SceneManager.LoadScene(1);
         }
 
         // Credits pressed
@@ -77,13 +110,11 @@ public class MainMenuManager : MonoBehaviour
             playArea.SetActive(true);
             creditsArea.SetActive(true);
             quitArea.SetActive(true);
-
         }
 
         // Quit pressed
         if (Input.GetMouseButtonDown(0) && _quitAreaCollider.OverlapPoint(mousePos))
         {
-            Debug.Log("qUIT");
             Application.Quit();
         }
     }

@@ -135,7 +135,7 @@ public class DrawManager1 : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && _mainMenuSceneGameAreaCollider.OverlapPoint(mousePos))
         {
             // NOTE: Gives error since work on main menu scene has not been yet started
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene(0);
         }
 
         // Next drawing button pressed
@@ -180,7 +180,6 @@ public class DrawManager1 : MonoBehaviour
 
     IEnumerator PauseGame()
     {
-        Debug.Log("PauseGame IEnumerator active. Pausing the game");
         inkLeftSliderFill.gameObject.SetActive(false);
         InkLeftPercentageGameObject.gameObject.SetActive(false);
         PauseScreenGameObject.gameObject.SetActive(true);
