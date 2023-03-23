@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 51818814}
   - component: {fileID: 51818815}
   m_Layer: 0
-  m_Name: Score1
+  m_Name: Score2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -357,10 +357,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 51818813}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 831fa6c7da010f846839da71a0913b13, type: 3}
+  m_Script: {fileID: 11500000, guid: 1eebf867023ccb24085dfc968e7722e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  draw1Score: 0
+  draw2Score: 0
 --- !u!1 &140390470
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,7 +507,7 @@ GameObject:
   - component: {fileID: 236386952}
   - component: {fileID: 236386953}
   m_Layer: 0
-  m_Name: PointCounter1
+  m_Name: PointCounter2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -537,7 +537,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 236386951}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a1c74fb6e4140045808fd0195e62d35, type: 3}
+  m_Script: {fileID: 11500000, guid: 504298c909b16c14b9af4c813dff6375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   PointTotalCounter: 0
@@ -2109,7 +2109,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 775650470}
-  - component: {fileID: 775650469}
+  - component: {fileID: 775650471}
   m_Layer: 0
   m_Name: Draw Manager
   m_TagString: Untagged
@@ -2117,26 +2117,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &775650469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 775650468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43dcd23821cd0374d9bf5b6cafeeb948, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _linePrefab: {fileID: 6732282757935456567, guid: 7c26a6e9339b0b046a5be8364be95678, type: 3}
-  inkLeftSliderFill: {fileID: 1148377267}
-  nextDrawingArea: {fileID: 1533550142}
-  PauseButtonColliderGameObject: {fileID: 978642431}
-  PauseScreenGameObject: {fileID: 1644257973}
-  DisablePauseScreenGameObject: {fileID: 403736536}
-  RestartSceneScreenGameObject: {fileID: 897955219}
-  MainMenuScreenGameObject: {fileID: 2083440790}
 --- !u!4 &775650470
 Transform:
   m_ObjectHideFlags: 0
@@ -2152,6 +2132,26 @@ Transform:
   m_Father: {fileID: 10372005}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &775650471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775650468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9600eddf332931d4193e4a94dfeefd1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _linePrefab: {fileID: 1803727728179582421, guid: 7b3e219952a988344a3ccf40c031d11e, type: 3}
+  inkLeftSliderFill: {fileID: 1148377267}
+  nextDrawingArea: {fileID: 1533550142}
+  PauseButtonColliderGameObject: {fileID: 978642431}
+  PauseScreenGameObject: {fileID: 1644257973}
+  DisablePauseScreenGameObject: {fileID: 403736536}
+  RestartSceneScreenGameObject: {fileID: 897955219}
+  MainMenuScreenGameObject: {fileID: 2083440790}
 --- !u!1 &897955219
 GameObject:
   m_ObjectHideFlags: 0
@@ -2901,7 +2901,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6807bf468503c2649857898a1c66397f, type: 3}
       propertyPath: m_Name
-      value: Draw1Big
+      value: Draw2Big
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6807bf468503c2649857898a1c66397f, type: 3}
       propertyPath: m_IsActive
