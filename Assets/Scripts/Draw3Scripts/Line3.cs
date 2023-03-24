@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Line2 : MonoBehaviour
+public class Line3 : MonoBehaviour
 {
     [SerializeField] private LineRenderer _renderer;
     [SerializeField] private EdgeCollider2D _collider;
@@ -21,7 +21,7 @@ public class Line2 : MonoBehaviour
     {
         _cam = Camera.main;
         // Remember to change ("PointCounterX") depending on scene
-        PointCountObject = GameObject.Find("PointCounter2");
+        PointCountObject = GameObject.Find("PointCounter3");
     }
 
     public void SetPosition(Vector2 pos)
@@ -33,7 +33,7 @@ public class Line2 : MonoBehaviour
 
         // Allow more drawing if in appropiate position AND more ink still left
         // Remember to change <PointCountX> depending on scene
-        if (CanAppend(pos) && PointCountObject.GetComponent<PointCount2>().canDraw == true)
+        if (CanAppend(pos) && PointCountObject.GetComponent<PointCount3>().canDraw == true)
         {
             _points.Add(pos);
 
@@ -52,7 +52,7 @@ public class Line2 : MonoBehaviour
                         RayCastHitDrawingTargetObject = hit.transform.gameObject;
                         RayCastHitDrawingTargetObject.GetComponent<MeshCollider>().enabled = false;
                         // Remember to change <PointCountX> depending on scene
-                        PointCountObject.GetComponent<PointCount2>().PointTotalCounter += 1;
+                        PointCountObject.GetComponent<PointCount3>().PointTotalCounter += 1;
                         //Debug.Log("Score!");
                     }
                 }
@@ -74,10 +74,10 @@ public class Line2 : MonoBehaviour
         {
             // Calculates how much player has drawn and adds it as a sum to DrawingDistanceInTotal
             // Remember to change <PointCountX> depending on scene
-            PointCountObject.GetComponent<PointCount2>().DrawingDistanceInTotal += (Vector2.Distance(_renderer.GetPosition(_renderer.positionCount - 1), pos));
+            PointCountObject.GetComponent<PointCount3>().DrawingDistanceInTotal += (Vector2.Distance(_renderer.GetPosition(_renderer.positionCount - 1), pos));
 
             // Remember to change DrawManagerX.RESOLUTION depending on scene
-            return Vector2.Distance(_renderer.GetPosition(_renderer.positionCount - 1), pos) > DrawManager2.RESOLUTION;
+            return Vector2.Distance(_renderer.GetPosition(_renderer.positionCount - 1), pos) > DrawManager3.RESOLUTION;
         }
     }
 }

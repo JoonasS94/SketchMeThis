@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class DrawManager2 : MonoBehaviour
+public class DrawManager4 : MonoBehaviour
 {
     // specify the game object to draw inside
     private GameObject drawArea;
@@ -15,10 +15,10 @@ public class DrawManager2 : MonoBehaviour
     private Camera _cam;
 
     // Remember to change LineX depending on scene
-    [SerializeField] private Line2 _linePrefab;
+    [SerializeField] private Line4 _linePrefab;
     public const float RESOLUTION = .005f;
     // Remember to change LineX depending on scene
-    private Line2 _currentLine;
+    private Line4 _currentLine;
     private GameObject PointCountObject;
     private GameObject StartTextGameObject;
     private TMP_Text StartTextTMP;
@@ -98,7 +98,7 @@ public class DrawManager2 : MonoBehaviour
         _mainMenuSceneGameAreaCollider = MainMenuScreenGameObject.GetComponent<PolygonCollider2D>();
 
         // Remember to change ("PointCounterX") depending on scene
-        PointCountObject = GameObject.Find("PointCounter2");
+        PointCountObject = GameObject.Find("PointCounter4");
 
         StartTextGameObject = GameObject.Find("StartText");
         StartTextTMP = StartTextGameObject.GetComponent<TextMeshProUGUI>();
@@ -117,7 +117,7 @@ public class DrawManager2 : MonoBehaviour
 
         // Remember to change <PointCountX> depending on scene
         // Pause game button pressed
-        if (Input.GetMouseButtonDown(0) && _pauseGameAreaCollider.OverlapPoint(mousePos) && PointCountObject.GetComponent<PointCount2>().canDraw == true)
+        if (Input.GetMouseButtonDown(0) && _pauseGameAreaCollider.OverlapPoint(mousePos) && PointCountObject.GetComponent<PointCount4>().canDraw == true)
         {
             StartCoroutine(PauseGame());
         }
@@ -133,7 +133,7 @@ public class DrawManager2 : MonoBehaviour
         {
             // Remember to change "ScoreX" depending on scene
             // Prevent Score Objects spawning endless amount
-            Destroy(GameObject.Find("Score2"));
+            Destroy(GameObject.Find("Score4"));
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
@@ -147,21 +147,21 @@ public class DrawManager2 : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && _nextDrawingAreaCollider.OverlapPoint(mousePos))
         {
             // NOTE: May give error if work on scene has not been yet started
-            SceneManager.LoadScene("Draw3");
+            SceneManager.LoadScene("ResultsScene");
         }
 
         // Remember to change <PointCountX> depending on scene
         // Stop drawing pressed while game is active
-        if (Input.GetMouseButtonDown(0) && _stopDrawingAreaCollider.OverlapPoint(mousePos) && PointCountObject.GetComponent<PointCount2>().canDraw == true && PointCountObject.GetComponent<PointCount2>().gamePaused == false)
+        if (Input.GetMouseButtonDown(0) && _stopDrawingAreaCollider.OverlapPoint(mousePos) && PointCountObject.GetComponent<PointCount4>().canDraw == true && PointCountObject.GetComponent<PointCount4>().gamePaused == false)
         {
             // Remember to change <PointCountX> depending on scene
-            PointCountObject.GetComponent<PointCount2>().DrawingDistanceInTotal = 999;
+            PointCountObject.GetComponent<PointCount4>().DrawingDistanceInTotal = 999;
         }
 
 
         // Remember to change <PointCountX> depending on scene
         // Drawing
-        if (_drawAreaCollider.OverlapPoint(mousePos) && PointCountObject.GetComponent<PointCount2>().canDraw == true && PointCountObject.GetComponent<PointCount2>().gamePaused == false)
+        if (_drawAreaCollider.OverlapPoint(mousePos) && PointCountObject.GetComponent<PointCount4>().canDraw == true && PointCountObject.GetComponent<PointCount4>().gamePaused == false)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -176,7 +176,7 @@ public class DrawManager2 : MonoBehaviour
 
         // When player has finished drawing start comparing/ scoring process
         // Remember to change <PointCountX>.canDraw && <PointCountX>.StopChecking depending on scene
-        if (PointCountObject.GetComponent<PointCount2>().canDraw == false && PointCountObject.GetComponent<PointCount2>().StopChecking == true && CompareResultsStarted == false)
+        if (PointCountObject.GetComponent<PointCount4>().canDraw == false && PointCountObject.GetComponent<PointCount4>().StopChecking == true && CompareResultsStarted == false)
         {
             CompareResultsStarted = true;
             StartCoroutine(CompareResults());
@@ -189,7 +189,7 @@ public class DrawManager2 : MonoBehaviour
         InkLeftPercentageGameObject.gameObject.SetActive(false);
         PauseScreenGameObject.gameObject.SetActive(true);
         // Remember to change <PointCountX> depending on scene
-        PointCountObject.GetComponent<PointCount2>().gamePaused = true;
+        PointCountObject.GetComponent<PointCount4>().gamePaused = true;
         yield return new WaitForSeconds(0.25f);
 
     }
@@ -201,7 +201,7 @@ public class DrawManager2 : MonoBehaviour
         InkLeftPercentageGameObject.gameObject.SetActive(true);
         PauseScreenGameObject.gameObject.SetActive(false);
         // Remember to change <PointCountX> depending on scene
-        PointCountObject.GetComponent<PointCount2>().gamePaused = false;
+        PointCountObject.GetComponent<PointCount4>().gamePaused = false;
         yield return new WaitForSeconds(0.25f);
 
     }
@@ -232,7 +232,7 @@ public class DrawManager2 : MonoBehaviour
         StartTextGameObject.gameObject.SetActive(false);
         // Allow player to draw
         // Remember to change <PointCountX>.canDraw depending on scene
-        PointCountObject.GetComponent<PointCount2>().canDraw = true;
+        PointCountObject.GetComponent<PointCount4>().canDraw = true;
     }
 
     IEnumerator CompareResults()
@@ -254,7 +254,7 @@ public class DrawManager2 : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
 
         // Remember to change <PointCountX> depending on scene
-        DrawingResult = (PointCountObject.GetComponent<PointCount2>().PointTotalCounter * ratioNumber);
+        DrawingResult = (PointCountObject.GetComponent<PointCount4>().PointTotalCounter * ratioNumber);
 
         // To prevent over 100 point (very unlikely) cases
         if (DrawingResult > 100)
@@ -265,7 +265,7 @@ public class DrawManager2 : MonoBehaviour
         RoundingToInt = Mathf.RoundToInt(DrawingResult);
         // Transfer score data to permanent score history GameObject
         // Remember to change ("ScoreX) && <DrawScoreX> && drawXScore depending on scene
-        GameObject.Find("Score2").GetComponent<DrawScore2>().draw2Score = RoundingToInt;
+        GameObject.Find("Score4").GetComponent<DrawScore4>().draw4Score = RoundingToInt;
         //Debug.Log("Score:" + RoundingToInt);
 
         CompareTextGameObject.gameObject.SetActive(false);

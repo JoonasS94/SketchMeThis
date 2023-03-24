@@ -130,21 +130,23 @@ public class DrawManager1 : MonoBehaviour
         // Restart scene button pressed
         if (Input.GetMouseButtonDown(0) && _restartSceneGameAreaCollider.OverlapPoint(mousePos))
         {
+            // Remember to change "ScoreX" depending on scene
+            // Prevent Score Objects spawning endless amount
+            Destroy(GameObject.Find("Score1"));
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         // Return to main menu button pressed
         if (Input.GetMouseButtonDown(0) && _mainMenuSceneGameAreaCollider.OverlapPoint(mousePos))
         {
-            // NOTE: Gives error since work on main menu scene has not been yet started
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene("MainMenuScene");
         }
 
         // Next drawing button pressed
         if (Input.GetMouseButtonDown(0) && _nextDrawingAreaCollider.OverlapPoint(mousePos))
         {
-            //Draw2
-            SceneManager.LoadScene(2);
+            // NOTE: May give error if work on scene has not been yet started
+            SceneManager.LoadScene("Draw2");
         }
 
         // Remember to change <PointCountX> depending on scene
@@ -225,12 +227,11 @@ public class DrawManager1 : MonoBehaviour
         }
 
         StartTextGameObject.gameObject.SetActive(true);
-        // Allow player to draw
-        PointCountObject.GetComponent<PointCount1>().canDraw = true;
-
         yield return new WaitForSeconds(1);
-
         StartTextGameObject.gameObject.SetActive(false);
+        // Allow player to draw
+        // Remember to change <PointCountX>.canDraw depending on scene
+        PointCountObject.GetComponent<PointCount1>().canDraw = true;
 
     }
 

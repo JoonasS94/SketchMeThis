@@ -51,6 +51,7 @@ public class Line1 : MonoBehaviour
                         // If visible line hits a score area disable that score parts MeshCollider and add 1 point to pointCalculation
                         RayCastHitDrawingTargetObject = hit.transform.gameObject;
                         RayCastHitDrawingTargetObject.GetComponent<MeshCollider>().enabled = false;
+                        // Remember to change <PointCountX> depending on scene
                         PointCountObject.GetComponent<PointCount1>().PointTotalCounter += 1;
                         //Debug.Log("Score!");
                     }
