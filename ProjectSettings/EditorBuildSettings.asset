@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Draw4.unity
     guid: 2a5214f632454e340af8b386db9c3372
+  - enabled: 1
+    path: Assets/Scenes/ResultsScene.unity
+    guid: d31dd0e587b17e64ebfcfc5e2413a0b7
   m_configObjects: {}
