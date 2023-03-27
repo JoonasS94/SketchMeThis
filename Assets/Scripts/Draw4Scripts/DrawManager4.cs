@@ -140,6 +140,11 @@ public class DrawManager4 : MonoBehaviour
         // Return to main menu button pressed
         if (Input.GetMouseButtonDown(0) && _mainMenuSceneGameAreaCollider.OverlapPoint(mousePos))
         {
+            // Remember to add Destroy ScoreX as many as needed (depending on scene)
+            Destroy(GameObject.Find("Score1"));
+            Destroy(GameObject.Find("Score2"));
+            Destroy(GameObject.Find("Score3"));
+            Destroy(GameObject.Find("Score4"));
             SceneManager.LoadScene("MainMenuScene");
         }
 
