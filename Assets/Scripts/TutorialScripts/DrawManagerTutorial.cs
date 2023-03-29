@@ -24,7 +24,14 @@ public class DrawManagerTutorial : MonoBehaviour
     private TMP_Text StartTextTMP;
     private GameObject CompareTextGameObject;
     private GameObject CompareText2GameObject;
+    // tutorial object
+    private GameObject CompareText3GameObject;
+
+    private TMP_Text CompareTextTMP;
     private TMP_Text CompareText2TMP;
+    // tutorial object
+    private TMP_Text CompareText3TMP;
+
     private GameObject DrawingObject;
     private float DrawingResult;
     public Slider inkLeftSliderFill;
@@ -103,8 +110,13 @@ public class DrawManagerTutorial : MonoBehaviour
         StartTextGameObject = GameObject.Find("StartText");
         StartTextTMP = StartTextGameObject.GetComponent<TextMeshProUGUI>();
         CompareTextGameObject = GameObject.Find("CompareText");
+        CompareTextTMP = CompareTextGameObject.GetComponent<TextMeshProUGUI>();
         CompareText2GameObject = GameObject.Find("CompareText2");
         CompareText2TMP = CompareText2GameObject.GetComponent<TextMeshProUGUI>();
+
+        CompareText3GameObject = GameObject.Find("CompareText3");
+        CompareText3TMP = CompareText3GameObject.GetComponent<TextMeshProUGUI>();
+
         InkLeftPercentageGameObject = GameObject.Find("InkLeftPercentage");
 
         // Coroutine of showing original drawing started
@@ -150,7 +162,7 @@ public class DrawManagerTutorial : MonoBehaviour
         {
             // NOTE: May give error if work on scene has not been yet started
             Destroy(GameObject.Find("ScoreTutorial"));
-            SceneManager.LoadScene("ResultsScene");
+            SceneManager.LoadScene("Draw1");
         }
 
         // Remember to change <PointCountX> depending on scene
@@ -174,6 +186,8 @@ public class DrawManagerTutorial : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 _currentLine.SetPosition(mousePos);
+                CompareTextGameObject.GetComponent<TextMeshProUGUI>().enabled = false;
+                CompareText2GameObject.GetComponent<TextMeshProUGUI>().enabled = true;
             }
         }
 
@@ -211,9 +225,8 @@ public class DrawManagerTutorial : MonoBehaviour
 
     IEnumerator StartGamePlay()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
         StartTextGameObject.gameObject.SetActive(false);
-        StartTextTMP.text = "Now draw it yourself!";
 
         DrawingObject = GameObject.Find("DrawingObject");
         MeshRenderer[] meshRenderers = DrawingObject.GetComponentsInChildren<MeshRenderer>();
@@ -230,9 +243,9 @@ public class DrawManagerTutorial : MonoBehaviour
             childRenderMeshes.enabled = false;
         }
 
-        StartTextGameObject.gameObject.SetActive(true);
-        yield return new WaitForSeconds(1);
-        StartTextGameObject.gameObject.SetActive(false);
+        yield return new WaitForSeconds(0.1f);
+
+        CompareTextGameObject.GetComponent<TextMeshProUGUI>().enabled = true;
         // Allow player to draw
         // Remember to change <PointCountX>.canDraw depending on scene
         PointCountObject.GetComponent<PointCountTutorial>().canDraw = true;
@@ -241,9 +254,19 @@ public class DrawManagerTutorial : MonoBehaviour
     IEnumerator CompareResults()
     {
         stopDrawingArea.SetActive(false);
+        CompareText2GameObject.GetComponent<TextMeshProUGUI>().enabled = false;
+
 
         yield return new WaitForSeconds(0.25f);
-        CompareTextGameObject.GetComponent<TextMeshProUGUI>().enabled = true;
+
+        CompareText3GameObject.GetComponent<TextMeshProUGUI>().enabled = true;
+
+        yield return new WaitForSeconds(10);
+
+        CompareText3GameObject.GetComponent<TextMeshProUGUI>().enabled = false;
+
+        CompareText2GameObject.GetComponent<TextMeshProUGUI>().enabled = true;
+        CompareText2TMP.text = "Comparing...";
 
         DrawingObject = GameObject.Find("DrawingObject");
         MeshRenderer[] meshRenderers = DrawingObject.GetComponentsInChildren<MeshRenderer>();
@@ -281,31 +304,31 @@ public class DrawManagerTutorial : MonoBehaviour
         // 90 - 100 Score
         if (RoundingToInt >= 90)
         {
-            CompareText2TMP.text = RoundingToInt + " / 100" + "\nFantastic work!";
+            CompareText2TMP.text = RoundingToInt + " / 100" + "\nFinish tutorial by pressing button on top left.";
         }
 
         // 66 - 89 Score
         if (RoundingToInt >= 66 && RoundingToInt <= 89)
         {
-            CompareText2TMP.text = RoundingToInt + " / 100" + "\nGreat job!";
+            CompareText2TMP.text = RoundingToInt + " / 100" + "\nFinish tutorial by pressing button on top left.";
         }
 
         // 30 - 65 Score
         if (RoundingToInt >= 30 && RoundingToInt <= 65)
         {
-            CompareText2TMP.text = RoundingToInt + " / 100" + "\nOkay";
+            CompareText2TMP.text = RoundingToInt + " / 100" + "\nFinish tutorial by pressing button on top left.";
         }
 
         // 10 - 29 Score
         if (RoundingToInt >= 10 && RoundingToInt <= 29)
         {
-            CompareText2TMP.text = RoundingToInt + " / 100" + "\nCould be better";
+            CompareText2TMP.text = RoundingToInt + " / 100" + "\nFinish tutorial by pressing button on top left.";
         }
 
         // 0 - 9 Score
         if (RoundingToInt >= 0 && RoundingToInt <= 9)
         {
-            CompareText2TMP.text = RoundingToInt + " / 100" + "\nYou can do better";
+            CompareText2TMP.text = RoundingToInt + " / 100" + "\nFinish tutorial by pressing button on top left.";
         }
 
         yield return new WaitForSeconds(0.5f);

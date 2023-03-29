@@ -21,7 +21,7 @@ public class LineTutorial : MonoBehaviour
     {
         _cam = Camera.main;
         // Remember to change ("PointCounterX") depending on scene
-        PointCountObject = GameObject.Find("PointCounter4");
+        PointCountObject = GameObject.Find("PointCounterTutorial");
     }
 
     public void SetPosition(Vector2 pos)
@@ -33,7 +33,7 @@ public class LineTutorial : MonoBehaviour
 
         // Allow more drawing if in appropiate position AND more ink still left
         // Remember to change <PointCountX> depending on scene
-        if (CanAppend(pos) && PointCountObject.GetComponent<PointCount4>().canDraw == true)
+        if (CanAppend(pos) && PointCountObject.GetComponent<PointCountTutorial>().canDraw == true)
         {
             _points.Add(pos);
 
@@ -52,7 +52,7 @@ public class LineTutorial : MonoBehaviour
                         RayCastHitDrawingTargetObject = hit.transform.gameObject;
                         RayCastHitDrawingTargetObject.GetComponent<MeshCollider>().enabled = false;
                         // Remember to change <PointCountX> depending on scene
-                        PointCountObject.GetComponent<PointCount4>().PointTotalCounter += 1;
+                        PointCountObject.GetComponent<PointCountTutorial>().PointTotalCounter += 1;
                         //Debug.Log("Score!");
                     }
                 }
@@ -74,10 +74,10 @@ public class LineTutorial : MonoBehaviour
         {
             // Calculates how much player has drawn and adds it as a sum to DrawingDistanceInTotal
             // Remember to change <PointCountX> depending on scene
-            PointCountObject.GetComponent<PointCount4>().DrawingDistanceInTotal += (Vector2.Distance(_renderer.GetPosition(_renderer.positionCount - 1), pos));
+            //PointCountObject.GetComponent<PointCountTutorial>().DrawingDistanceInTotal += (Vector2.Distance(_renderer.GetPosition(_renderer.positionCount - 1), pos));
 
             // Remember to change DrawManagerX.RESOLUTION depending on scene
-            return Vector2.Distance(_renderer.GetPosition(_renderer.positionCount - 1), pos) > DrawManager4.RESOLUTION;
+            return Vector2.Distance(_renderer.GetPosition(_renderer.positionCount - 1), pos) > DrawManagerTutorial.RESOLUTION;
         }
     }
 }

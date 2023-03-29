@@ -25,7 +25,6 @@ public class PointCountTutorial : MonoBehaviour
     private void Start()
     {
         Application.targetFrameRate = 60;
-        //inkLeftSliderFill = GameObject.Find("inkLeftSlider").GetComponent<Slider>();
         InkLeftPercentageGameObject = GameObject.Find("InkLeftPercentage");
         InkLeftPercentageTextTMP = InkLeftPercentageGameObject.GetComponent<TextMeshProUGUI>();
     }
@@ -38,7 +37,7 @@ public class PointCountTutorial : MonoBehaviour
             // Calculate how much ink left and show it to player as XXX %
             inkLeftCalculation = ((MaximumDrawingDistance - DrawingDistanceInTotal) / MaximumDrawingDistance * 100);
             inkLeftCalculationDec = Mathf.RoundToInt(inkLeftCalculation);
-            inkLeftSliderFill.value = inkLeftCalculationDec;
+            //inkLeftSliderFill.value = inkLeftCalculationDec;
 
             // If player consumes ink more than 0 % show still 0 % ink left
             if (inkLeftCalculationDec < 0)
@@ -47,12 +46,13 @@ public class PointCountTutorial : MonoBehaviour
                 inkLeftCalculationDec = 0;
                 inkLeftSliderFill.value = inkLeftCalculationDec;
             }
-            InkLeftPercentageTextTMP.text = inkLeftCalculationDec + " %";
+            //InkLeftPercentageTextTMP.text = inkLeftCalculationDec + " %";
         }
 
         if (DrawingDistanceInTotal >= MaximumDrawingDistance && StopChecking == false)
         {
             // Out of ink
+            InkLeftPercentageTextTMP.text = "0" + " %";
             canDraw = false;
             StopChecking = true;
             inkLeftSliderFill.gameObject.SetActive(false);
