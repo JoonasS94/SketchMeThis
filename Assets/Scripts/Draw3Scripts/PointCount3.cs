@@ -25,7 +25,6 @@ public class PointCount3 : MonoBehaviour
     private void Start()
     {
         Application.targetFrameRate = 60;
-        //inkLeftSliderFill = GameObject.Find("inkLeftSlider").GetComponent<Slider>();
         InkLeftPercentageGameObject = GameObject.Find("InkLeftPercentage");
         InkLeftPercentageTextTMP = InkLeftPercentageGameObject.GetComponent<TextMeshProUGUI>();
     }

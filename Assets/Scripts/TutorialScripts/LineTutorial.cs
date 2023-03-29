@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class LineTutorial : MonoBehaviour
 {
@@ -12,9 +13,20 @@ public class LineTutorial : MonoBehaviour
     private Camera _cam;
     private GameObject RayCastHitDrawingTargetObject;
 
+    // tutorial objects
+    private GameObject CompareTextGameObject;
+    private GameObject CompareText2GameObject;
+    private TMP_Text CompareTextTMP;
+    private TMP_Text CompareText2TMP;
+
     void Start()
     {
         _collider.transform.position -= transform.position;
+
+        CompareTextGameObject = GameObject.Find("CompareText");
+        CompareTextTMP = CompareTextGameObject.GetComponent<TextMeshProUGUI>();
+        CompareText2GameObject = GameObject.Find("CompareText2");
+        CompareText2TMP = CompareText2GameObject.GetComponent<TextMeshProUGUI>();
     }
 
     private void Awake()
@@ -43,6 +55,9 @@ public class LineTutorial : MonoBehaviour
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
+
+                CompareTextGameObject.GetComponent<TextMeshProUGUI>().enabled = false;
+                CompareText2GameObject.GetComponent<TextMeshProUGUI>().enabled = true;
 
                 if (Input.GetMouseButton(0) && Physics.Raycast(ray, out hit))
                 {

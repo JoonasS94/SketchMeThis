@@ -83,14 +83,13 @@ public class MainMenuManager : MonoBehaviour
         // Tutorial Prompt Yes pressed
         if (Input.GetMouseButtonDown(0) && _TutorialPromptYesAreaCollider.OverlapPoint(mousePos))
         {
-            Debug.Log("Yes");
+            SceneManager.LoadScene("TutorialScene");
         }
 
         // Tutorial Prompt No pressed
         if (Input.GetMouseButtonDown(0) && _TutorialPromptNoAreaCollider.OverlapPoint(mousePos))
         {
-            // Load drawing scene 1
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene("Draw1");
         }
 
         // Credits pressed

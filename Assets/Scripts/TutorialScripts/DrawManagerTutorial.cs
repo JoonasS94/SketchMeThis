@@ -21,7 +21,6 @@ public class DrawManagerTutorial : MonoBehaviour
     private LineTutorial _currentLine;
     private GameObject PointCountObject;
     private GameObject StartTextGameObject;
-    private TMP_Text StartTextTMP;
     private GameObject CompareTextGameObject;
     private GameObject CompareText2GameObject;
     // tutorial object
@@ -108,7 +107,6 @@ public class DrawManagerTutorial : MonoBehaviour
         PointCountObject = GameObject.Find("PointCounterTutorial");
 
         StartTextGameObject = GameObject.Find("StartText");
-        StartTextTMP = StartTextGameObject.GetComponent<TextMeshProUGUI>();
         CompareTextGameObject = GameObject.Find("CompareText");
         CompareTextTMP = CompareTextGameObject.GetComponent<TextMeshProUGUI>();
         CompareText2GameObject = GameObject.Find("CompareText2");
@@ -186,8 +184,6 @@ public class DrawManagerTutorial : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 _currentLine.SetPosition(mousePos);
-                CompareTextGameObject.GetComponent<TextMeshProUGUI>().enabled = false;
-                CompareText2GameObject.GetComponent<TextMeshProUGUI>().enabled = true;
             }
         }
 
