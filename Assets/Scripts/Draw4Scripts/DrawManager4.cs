@@ -69,7 +69,10 @@ public class DrawManager4 : MonoBehaviour
     // the collider of the stop drawing area object
     private PolygonCollider2D _mainMenuSceneGameAreaCollider;
 
-
+    public GameObject BackGround;
+    public Material BackGroundStartingMaterial;
+    public Material BackGroundGameplay01Material;
+    public Material BackGroundGameplay02Material;
 
     void Start()
     {
@@ -190,8 +193,8 @@ public class DrawManager4 : MonoBehaviour
 
     IEnumerator PauseGame()
     {
-        inkLeftSliderFill.gameObject.SetActive(false);
-        InkLeftPercentageGameObject.gameObject.SetActive(false);
+        //inkLeftSliderFill.gameObject.SetActive(false);
+        //InkLeftPercentageGameObject.gameObject.SetActive(false);
         PauseScreenGameObject.gameObject.SetActive(true);
         // Remember to change <PointCountX> depending on scene
         PointCountObject.GetComponent<PointCount4>().gamePaused = true;
@@ -237,12 +240,17 @@ public class DrawManager4 : MonoBehaviour
         StartTextGameObject.gameObject.SetActive(false);
         // Allow player to draw
         // Remember to change <PointCountX>.canDraw depending on scene
+
+        BackGround.GetComponent<MeshRenderer>().material = BackGroundGameplay01Material;
+
         PointCountObject.GetComponent<PointCount4>().canDraw = true;
     }
 
     IEnumerator CompareResults()
     {
         stopDrawingArea.SetActive(false);
+
+        BackGround.GetComponent<MeshRenderer>().material = BackGroundStartingMaterial;
 
         yield return new WaitForSeconds(0.25f);
         CompareTextGameObject.GetComponent<TextMeshProUGUI>().enabled = true;
@@ -311,6 +319,8 @@ public class DrawManager4 : MonoBehaviour
         }
 
         yield return new WaitForSeconds(0.5f);
+
+        BackGround.GetComponent<MeshRenderer>().material = BackGroundGameplay02Material;
 
         nextDrawingArea.SetActive(true);
     }

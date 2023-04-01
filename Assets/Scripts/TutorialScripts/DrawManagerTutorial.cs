@@ -75,7 +75,10 @@ public class DrawManagerTutorial : MonoBehaviour
     // the collider of the stop drawing area object
     private PolygonCollider2D _mainMenuSceneGameAreaCollider;
 
-
+    public GameObject BackGround;
+    public Material BackGroundStartingMaterial;
+    public Material BackGroundGameplay01Material;
+    public Material BackGroundGameplay02Material;
 
     void Start()
     {
@@ -244,14 +247,19 @@ public class DrawManagerTutorial : MonoBehaviour
         CompareTextGameObject.GetComponent<TextMeshProUGUI>().enabled = true;
         // Allow player to draw
         // Remember to change <PointCountX>.canDraw depending on scene
+
+        BackGround.GetComponent<MeshRenderer>().material = BackGroundGameplay01Material;
+
         PointCountObject.GetComponent<PointCountTutorial>().canDraw = true;
     }
 
     IEnumerator CompareResults()
     {
         stopDrawingArea.SetActive(false);
-        CompareText2GameObject.GetComponent<TextMeshProUGUI>().enabled = false;
 
+        BackGround.GetComponent<MeshRenderer>().material = BackGroundStartingMaterial;
+
+        CompareText2GameObject.GetComponent<TextMeshProUGUI>().enabled = false;
 
         yield return new WaitForSeconds(0.25f);
 
@@ -328,6 +336,8 @@ public class DrawManagerTutorial : MonoBehaviour
         }
 
         yield return new WaitForSeconds(0.5f);
+
+        BackGround.GetComponent<MeshRenderer>().material = BackGroundGameplay02Material;
 
         finishTutorialArea.SetActive(true);
     }
