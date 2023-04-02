@@ -25,7 +25,6 @@ public class MainMenuManager : MonoBehaviour
     public GameObject CreditsScreen;
     // specify the game object to close credits scene
     public GameObject quitCreditsScreenButton;
-    public GameObject quitCreditsTexture;
     // the collider of the quit area object
     private PolygonCollider2D _quitCreditsAreaCollider;
 
@@ -100,7 +99,6 @@ public class MainMenuManager : MonoBehaviour
             quitArea.SetActive(false);
             CreditsScreen.SetActive(true);
             quitCreditsScreenButton.SetActive(true);
-            quitCreditsTexture.SetActive(true);
         }
 
         // Quit Credits pressed
@@ -108,7 +106,6 @@ public class MainMenuManager : MonoBehaviour
         {
             CreditsScreen.SetActive(false);
             quitCreditsScreenButton.SetActive(false);
-            quitCreditsTexture.SetActive(false);
             playArea.SetActive(true);
             creditsArea.SetActive(true);
             quitArea.SetActive(true);

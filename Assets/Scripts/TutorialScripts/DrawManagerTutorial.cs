@@ -201,9 +201,11 @@ public class DrawManagerTutorial : MonoBehaviour
 
     IEnumerator PauseGame()
     {
-        inkLeftSliderFill.gameObject.SetActive(false);
-        InkLeftPercentageGameObject.gameObject.SetActive(false);
+        //inkLeftSliderFill.gameObject.SetActive(false);
+        //InkLeftPercentageGameObject.gameObject.SetActive(false);
         PauseScreenGameObject.gameObject.SetActive(true);
+        CompareTextGameObject.gameObject.SetActive(false);
+        CompareText2GameObject.gameObject.SetActive(false);
         // Remember to change <PointCountX> depending on scene
         PointCountObject.GetComponent<PointCountTutorial>().gamePaused = true;
         yield return new WaitForSeconds(0.25f);
@@ -215,6 +217,8 @@ public class DrawManagerTutorial : MonoBehaviour
         Debug.Log("DisablePauseGame IEnumerator active. Continuing the game");
         inkLeftSliderFill.gameObject.SetActive(true);
         InkLeftPercentageGameObject.gameObject.SetActive(true);
+        CompareTextGameObject.gameObject.SetActive(true);
+        CompareText2GameObject.gameObject.SetActive(true);
         PauseScreenGameObject.gameObject.SetActive(false);
         // Remember to change <PointCountX> depending on scene
         PointCountObject.GetComponent<PointCountTutorial>().gamePaused = false;
@@ -259,6 +263,7 @@ public class DrawManagerTutorial : MonoBehaviour
 
         BackGround.GetComponent<MeshRenderer>().material = BackGroundStartingMaterial;
 
+        CompareTextGameObject.GetComponent<TextMeshProUGUI>().enabled = false;
         CompareText2GameObject.GetComponent<TextMeshProUGUI>().enabled = false;
 
         yield return new WaitForSeconds(0.25f);

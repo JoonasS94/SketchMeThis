@@ -32,7 +32,7 @@ public class DrawManager3 : MonoBehaviour
 
     // 100 / amount of mesh colliders in drawing
     // Remember to adjust value for each drawing
-    private float ratioNumber = 4.166667f;
+    private float ratioNumber = 1.219512f;
 
     private int RoundingToInt;
     private bool CompareResultsStarted = false;
@@ -263,7 +263,12 @@ public class DrawManager3 : MonoBehaviour
         }
 
         // Waiting amount so that player (may) get excited themselves
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(3.5f);
+
+        foreach (MeshRenderer childRenderMeshes in meshRenderers)
+        {
+            childRenderMeshes.enabled = false;
+        }
 
         // Remember to change <PointCountX> depending on scene
         DrawingResult = (PointCountObject.GetComponent<PointCount3>().PointTotalCounter * ratioNumber);
