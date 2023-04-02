@@ -2113,7 +2113,7 @@ MonoBehaviour:
   BackGround: {fileID: 346941208}
   BackGroundStartingMaterial: {fileID: 2100000, guid: 12db52306dfbbdc4f9a0a871da8461ab, type: 2}
   BackGroundGameplay01Material: {fileID: 2100000, guid: e57fcfd8878b665438444a15094e4abd, type: 2}
-  BackGroundGameplay02Material: {fileID: 2100000, guid: e896792a5d504b849a03b8171d38995d, type: 2}
+  BackGroundGameplay02Material: {fileID: 2100000, guid: 186187d55ba25214e9c7e1df0b916fba, type: 2}
 --- !u!1 &905635334
 GameObject:
   m_ObjectHideFlags: 0

@@ -48,6 +48,9 @@ public class ResultsManager : MonoBehaviour
     // the collider of the quit area object
     private PolygonCollider2D _MainMenuAreaCollider;
 
+    public GameObject BackGround;
+    public Material BackGroundMainMenuButton;
+
     void Start()
     {
         _cam = Camera.main;
@@ -150,6 +153,8 @@ public class ResultsManager : MonoBehaviour
             MiddleStarIn.gameObject.SetActive(true);
             RightStarIn.gameObject.SetActive(true);
         }
+
+        BackGround.GetComponent<MeshRenderer>().material = BackGroundMainMenuButton;
 
         LetsCountResultsTMP.text = "Thanks for playing";
         MainMenuScreenPictureGameObject.gameObject.SetActive(true);
