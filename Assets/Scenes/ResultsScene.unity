@@ -624,6 +624,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -6425576196192667372, guid: c0dbbcc121ca94d4c85274ec27f38938, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6425576196192667372, guid: c0dbbcc121ca94d4c85274ec27f38938, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6425576196192667372, guid: c0dbbcc121ca94d4c85274ec27f38938, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 27b0e05c5cd7be447868fc0d75f75671, type: 2}
@@ -638,6 +646,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c0dbbcc121ca94d4c85274ec27f38938, type: 3}
       propertyPath: m_Name
       value: RightStarInParts
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727527470399947124, guid: c0dbbcc121ca94d4c85274ec27f38938, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727527470399947124, guid: c0dbbcc121ca94d4c85274ec27f38938, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1727527470399947124, guid: c0dbbcc121ca94d4c85274ec27f38938, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1331,6 +1347,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -6425576196192667372, guid: c0dbbcc121ca94d4c85274ec27f38938, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6425576196192667372, guid: c0dbbcc121ca94d4c85274ec27f38938, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6425576196192667372, guid: c0dbbcc121ca94d4c85274ec27f38938, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 27b0e05c5cd7be447868fc0d75f75671, type: 2}
@@ -1345,6 +1369,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c0dbbcc121ca94d4c85274ec27f38938, type: 3}
       propertyPath: m_Name
       value: MiddleStarInParts
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727527470399947124, guid: c0dbbcc121ca94d4c85274ec27f38938, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727527470399947124, guid: c0dbbcc121ca94d4c85274ec27f38938, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1727527470399947124, guid: c0dbbcc121ca94d4c85274ec27f38938, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1443,6 +1475,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -6425576196192667372, guid: c0dbbcc121ca94d4c85274ec27f38938, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6425576196192667372, guid: c0dbbcc121ca94d4c85274ec27f38938, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6425576196192667372, guid: c0dbbcc121ca94d4c85274ec27f38938, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 27b0e05c5cd7be447868fc0d75f75671, type: 2}
@@ -1457,6 +1497,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c0dbbcc121ca94d4c85274ec27f38938, type: 3}
       propertyPath: m_Name
       value: LeftStarInParts
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727527470399947124, guid: c0dbbcc121ca94d4c85274ec27f38938, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727527470399947124, guid: c0dbbcc121ca94d4c85274ec27f38938, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1727527470399947124, guid: c0dbbcc121ca94d4c85274ec27f38938, type: 3}
       propertyPath: m_Materials.Array.data[0]

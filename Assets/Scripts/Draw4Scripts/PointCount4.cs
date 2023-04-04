@@ -16,7 +16,7 @@ public class PointCount4 : MonoBehaviour
     private TMP_Text InkLeftPercentageTextTMP;
 
     // Remember to change X.Xf depending on scene drawing
-    private float MaximumDrawingDistance = 27.5f;
+    private float MaximumDrawingDistance = 85.5f;
     private float inkLeftCalculation;
     private int inkLeftCalculationDec;
 

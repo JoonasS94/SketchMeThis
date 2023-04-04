@@ -894,7 +894,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ' Memorize the shape and position'
+  m_text: 'Your memory and drawing skills
+
+    are key to vicotry.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: de1b3dcf01f44714bb6422708e8fb1d3, type: 2}
   m_sharedMaterial: {fileID: -3282807350501258520, guid: de1b3dcf01f44714bb6422708e8fb1d3, type: 2}
@@ -933,7 +935,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -36.56
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
