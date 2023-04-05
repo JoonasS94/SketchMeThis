@@ -1595,8 +1595,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Let's count the results
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: de1b3dcf01f44714bb6422708e8fb1d3, type: 2}
-  m_sharedMaterial: {fileID: -3282807350501258520, guid: de1b3dcf01f44714bb6422708e8fb1d3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c6dc1555728d57d4593a98b13a2c1e72, type: 2}
+  m_sharedMaterial: {fileID: 2605895287630445996, guid: c6dc1555728d57d4593a98b13a2c1e72, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

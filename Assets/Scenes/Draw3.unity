@@ -871,7 +871,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 22, y: 2}
+  m_AnchoredPosition: {x: -38, y: 2}
   m_SizeDelta: {x: 796.68, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &610207678
@@ -894,12 +894,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Your memory and drawing skills
+  m_text: 'Your memory and drawing
 
-    are key to vicotry.'
+    skills are key to victory.'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: de1b3dcf01f44714bb6422708e8fb1d3, type: 2}
-  m_sharedMaterial: {fileID: -3282807350501258520, guid: de1b3dcf01f44714bb6422708e8fb1d3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c6dc1555728d57d4593a98b13a2c1e72, type: 2}
+  m_sharedMaterial: {fileID: 2605895287630445996, guid: c6dc1555728d57d4593a98b13a2c1e72, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -935,7 +935,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: -36.56
+  m_lineSpacing: -16.4
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -5302,7 +5302,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 186, y: -106}
+  m_AnchoredPosition: {x: 186, y: -168}
   m_SizeDelta: {x: 952, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1417752604
@@ -5327,8 +5327,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Let's see how you performed...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: de1b3dcf01f44714bb6422708e8fb1d3, type: 2}
-  m_sharedMaterial: {fileID: -3282807350501258520, guid: de1b3dcf01f44714bb6422708e8fb1d3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c6dc1555728d57d4593a98b13a2c1e72, type: 2}
+  m_sharedMaterial: {fileID: 2605895287630445996, guid: c6dc1555728d57d4593a98b13a2c1e72, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5364,7 +5364,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: -70
+  m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -5437,7 +5437,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 122, y: -127}
+  m_AnchoredPosition: {x: 122, y: -139}
   m_SizeDelta: {x: 796.68, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1554420663
@@ -5464,8 +5464,8 @@ MonoBehaviour:
 
     Could be better'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: de1b3dcf01f44714bb6422708e8fb1d3, type: 2}
-  m_sharedMaterial: {fileID: -3282807350501258520, guid: de1b3dcf01f44714bb6422708e8fb1d3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c6dc1555728d57d4593a98b13a2c1e72, type: 2}
+  m_sharedMaterial: {fileID: 2605895287630445996, guid: c6dc1555728d57d4593a98b13a2c1e72, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5501,7 +5501,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: -70
+  m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0

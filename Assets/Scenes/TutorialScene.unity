@@ -236,7 +236,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 22, y: 2}
+  m_AnchoredPosition: {x: 22, y: 58.3}
   m_SizeDelta: {x: 796.68, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &140390472
@@ -259,12 +259,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'You will be shown green colored
-
-    shape 5 seconds.'
+  m_text: You will be shown green colored shape 5 seconds.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: de1b3dcf01f44714bb6422708e8fb1d3, type: 2}
-  m_sharedMaterial: {fileID: -3282807350501258520, guid: de1b3dcf01f44714bb6422708e8fb1d3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c6dc1555728d57d4593a98b13a2c1e72, type: 2}
+  m_sharedMaterial: {fileID: 2605895287630445996, guid: c6dc1555728d57d4593a98b13a2c1e72, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -300,7 +298,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: -45.47
+  m_lineSpacing: -34.42
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -423,7 +421,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 185, y: -154}
+  m_AnchoredPosition: {x: 265, y: -190}
   m_SizeDelta: {x: 796.68, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &321720477
@@ -450,8 +448,8 @@ MonoBehaviour:
 
     press Stop Drawing button.'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: de1b3dcf01f44714bb6422708e8fb1d3, type: 2}
-  m_sharedMaterial: {fileID: -3282807350501258520, guid: de1b3dcf01f44714bb6422708e8fb1d3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c6dc1555728d57d4593a98b13a2c1e72, type: 2}
+  m_sharedMaterial: {fileID: 2605895287630445996, guid: c6dc1555728d57d4593a98b13a2c1e72, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -487,7 +485,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: -37.44
+  m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -663,7 +661,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -444, y: -496}
+  m_AnchoredPosition: {x: -467.3, y: -473.8}
   m_SizeDelta: {x: 952, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &440373564
@@ -691,8 +689,8 @@ MonoBehaviour:
     Touch and move your finger
     to draw.'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: de1b3dcf01f44714bb6422708e8fb1d3, type: 2}
-  m_sharedMaterial: {fileID: -3282807350501258520, guid: de1b3dcf01f44714bb6422708e8fb1d3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c6dc1555728d57d4593a98b13a2c1e72, type: 2}
+  m_sharedMaterial: {fileID: 2605895287630445996, guid: c6dc1555728d57d4593a98b13a2c1e72, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -728,7 +726,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: -60
+  m_lineSpacing: -13.5
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -2008,8 +2006,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 239, y: -413}
-  m_SizeDelta: {x: 952, y: 50}
+  m_AnchoredPosition: {x: 135, y: -420}
+  m_SizeDelta: {x: 1076.2, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1531897634
 MonoBehaviour:
@@ -2036,8 +2034,8 @@ MonoBehaviour:
 
     Keep in mind that outside of tutorial amount of ink is limited.'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: de1b3dcf01f44714bb6422708e8fb1d3, type: 2}
-  m_sharedMaterial: {fileID: -3282807350501258520, guid: de1b3dcf01f44714bb6422708e8fb1d3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c6dc1555728d57d4593a98b13a2c1e72, type: 2}
+  m_sharedMaterial: {fileID: 2605895287630445996, guid: c6dc1555728d57d4593a98b13a2c1e72, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2061,19 +2059,19 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 75
+  m_fontSizeBase: 75
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: -60
+  m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
