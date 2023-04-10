@@ -71,6 +71,7 @@ public class MainMenuManager : MonoBehaviour
         // Play pressed
         if (Input.GetMouseButtonDown(0) && _playAreaCollider.OverlapPoint(mousePos))
         {
+            FindObjectOfType<AudioManager>().Play("SFX_ButtonPress1");
             playArea.SetActive(false);
             creditsArea.SetActive(false);
             quitArea.SetActive(false);
@@ -82,18 +83,21 @@ public class MainMenuManager : MonoBehaviour
         // Tutorial Prompt Yes pressed
         if (Input.GetMouseButtonDown(0) && _TutorialPromptYesAreaCollider.OverlapPoint(mousePos))
         {
+            FindObjectOfType<AudioManager>().Play("SFX_ButtonPress4");
             SceneManager.LoadScene("TutorialScene");
         }
 
         // Tutorial Prompt No pressed
         if (Input.GetMouseButtonDown(0) && _TutorialPromptNoAreaCollider.OverlapPoint(mousePos))
         {
+            FindObjectOfType<AudioManager>().Play("SFX_ButtonPress3");
             SceneManager.LoadScene("Draw1");
         }
 
         // Credits pressed
         if (Input.GetMouseButtonDown(0) && _creditsAreaCollider.OverlapPoint(mousePos))
         {
+            FindObjectOfType<AudioManager>().Play("SFX_ButtonPress2");
             playArea.SetActive(false);
             creditsArea.SetActive(false);
             quitArea.SetActive(false);
@@ -104,6 +108,7 @@ public class MainMenuManager : MonoBehaviour
         // Quit Credits pressed
         if (Input.GetMouseButtonDown(0) && _quitCreditsAreaCollider.OverlapPoint(mousePos))
         {
+            FindObjectOfType<AudioManager>().Play("SFX_ButtonPress2");
             CreditsScreen.SetActive(false);
             quitCreditsScreenButton.SetActive(false);
             playArea.SetActive(true);

@@ -76,6 +76,7 @@ public class ResultsManager : MonoBehaviour
         // Main Menu button pressed
         if (Input.GetMouseButtonDown(0) && _MainMenuAreaCollider.OverlapPoint(mousePos))
         {
+            FindObjectOfType<AudioManager>().Play("SFX_ButtonPress1");
             SceneManager.LoadScene("MainMenuScene");
         }
     }
@@ -115,6 +116,7 @@ public class ResultsManager : MonoBehaviour
         // 1 star performance (0% - 32%)
         if (finalPoints >= 0 && finalPoints <= 128)
         {
+            FindObjectOfType<AudioManager>().Play("SFX_1StarPerformance");
             Debug.Log("1 star performance");
             Points.gameObject.SetActive(false);
             CalculationMarkings.gameObject.SetActive(false);
@@ -128,6 +130,7 @@ public class ResultsManager : MonoBehaviour
         // 2 star performance (33% - 65%)
         if (finalPoints >= 129 && finalPoints <= 260)
         {
+            FindObjectOfType<AudioManager>().Play("SFX_2StarPerformance");
             Debug.Log("2 star performance");
             Points.gameObject.SetActive(false);
             CalculationMarkings.gameObject.SetActive(false);
@@ -142,6 +145,7 @@ public class ResultsManager : MonoBehaviour
         // 3 star performance (66% =<)
         if (finalPoints >= 261)
         {
+            FindObjectOfType<AudioManager>().Play("SFX_3StarPerformance");
             Debug.Log("3 star performance");
             Points.gameObject.SetActive(false);
             CalculationMarkings.gameObject.SetActive(false);

@@ -11,6 +11,7 @@ public class Line3 : MonoBehaviour
     private GameObject PointCountObject;
     private Camera _cam;
     private GameObject RayCastHitDrawingTargetObject;
+    private int RandomInkSound;
 
     void Start()
     {
@@ -38,6 +39,23 @@ public class Line3 : MonoBehaviour
             _points.Add(pos);
 
             _renderer.positionCount++;
+
+            RandomInkSound = (Random.Range(1, 4));
+
+            if (RandomInkSound == 1)
+            {
+                FindObjectOfType<AudioManager>().Play("SFX_InkSound1");
+            }
+
+            if (RandomInkSound == 2)
+            {
+                FindObjectOfType<AudioManager>().Play("SFX_InkSound2");
+            }
+
+            if (RandomInkSound == 3)
+            {
+                FindObjectOfType<AudioManager>().Play("SFX_InkSound3");
+            }
 
             if (_renderer.positionCount >= 2)
             {

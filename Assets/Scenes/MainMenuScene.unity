@@ -1135,6 +1135,97 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 693340530d52ede479c2a4126cd0a10d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sounds:
+  - name: SFX_ButtonPress1
+    clip: {fileID: 8300000, guid: ef54731be92746f4a9205a7ab9838391, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_ButtonPress2
+    clip: {fileID: 8300000, guid: 74c3adbfae0a0614881a1b518339fefb, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_ButtonPress3
+    clip: {fileID: 8300000, guid: 97ce9e27b7d465647bfb2739329b1adc, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_ButtonPress4
+    clip: {fileID: 8300000, guid: 6a9647a4483b2454c9dc9accc64fb6f9, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_Score0To10
+    clip: {fileID: 8300000, guid: 9917a7e80c193ce4e9e0ab310aa01aca, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_Score10To29
+    clip: {fileID: 8300000, guid: bf74d7d263326654493effd95dc843f6, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_Score30To65
+    clip: {fileID: 8300000, guid: f3a1ff8cabadc444a9d76b97d7401845, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_Score66To89
+    clip: {fileID: 8300000, guid: 0981701b70069c0498ada758c7e673f9, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_Score90To100
+    clip: {fileID: 8300000, guid: e98f497d2b03e2a49beaf184ca445b75, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_1StarPerformance
+    clip: {fileID: 8300000, guid: b68b68ad20325f3418f7396977c94e4c, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_2StarPerformance
+    clip: {fileID: 8300000, guid: 77993d4b4b777b04cb9ada1fa9c21690, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_3StarPerformance
+    clip: {fileID: 8300000, guid: be54f9f6f008ba14a9ced28063b594c7, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_InkSound1
+    clip: {fileID: 0}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_InkSound2
+    clip: {fileID: 0}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_InkSound3
+    clip: {fileID: 0}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!4 &1172117240
 Transform:
   m_ObjectHideFlags: 0

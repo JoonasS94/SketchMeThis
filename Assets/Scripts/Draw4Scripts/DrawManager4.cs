@@ -122,12 +122,14 @@ public class DrawManager4 : MonoBehaviour
         // Pause game button pressed
         if (Input.GetMouseButtonDown(0) && _pauseGameAreaCollider.OverlapPoint(mousePos) && PointCountObject.GetComponent<PointCount4>().canDraw == true)
         {
+            FindObjectOfType<AudioManager>().Play("SFX_ButtonPress1");
             StartCoroutine(PauseGame());
         }
 
         // Disable Pause game (continue drawing phase) button pressed
         if (Input.GetMouseButtonDown(0) && _disablePauseGameAreaCollider.OverlapPoint(mousePos))
         {
+            FindObjectOfType<AudioManager>().Play("SFX_ButtonPress2");
             StartCoroutine(DisablePauseGame());
         }
 
@@ -136,6 +138,7 @@ public class DrawManager4 : MonoBehaviour
         {
             // Remember to change "ScoreX" depending on scene
             // Prevent Score Objects spawning endless amount
+            FindObjectOfType<AudioManager>().Play("SFX_ButtonPress3");
             Destroy(GameObject.Find("Score4"));
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
@@ -144,6 +147,7 @@ public class DrawManager4 : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && _mainMenuSceneGameAreaCollider.OverlapPoint(mousePos))
         {
             // Remember to add Destroy ScoreX as many as needed (depending on scene)
+            FindObjectOfType<AudioManager>().Play("SFX_ButtonPress4");
             Destroy(GameObject.Find("Score1"));
             Destroy(GameObject.Find("Score2"));
             Destroy(GameObject.Find("Score3"));
@@ -155,6 +159,7 @@ public class DrawManager4 : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && _nextDrawingAreaCollider.OverlapPoint(mousePos))
         {
             // NOTE: May give error if work on scene has not been yet started
+            FindObjectOfType<AudioManager>().Play("SFX_ButtonPress1");
             SceneManager.LoadScene("ResultsScene");
         }
 
@@ -163,6 +168,7 @@ public class DrawManager4 : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && _stopDrawingAreaCollider.OverlapPoint(mousePos) && PointCountObject.GetComponent<PointCount4>().canDraw == true && PointCountObject.GetComponent<PointCount4>().gamePaused == false)
         {
             // Remember to change <PointCountX> depending on scene
+            FindObjectOfType<AudioManager>().Play("SFX_ButtonPress2");
             PointCountObject.GetComponent<PointCount4>().DrawingDistanceInTotal = 999;
         }
 
@@ -297,30 +303,35 @@ public class DrawManager4 : MonoBehaviour
         if (RoundingToInt >= 90)
         {
             CompareText2TMP.text = RoundingToInt + " / 100" + "\nFantastic work!";
+            FindObjectOfType<AudioManager>().Play("SFX_Score90To100");
         }
 
         // 66 - 89 Score
         if (RoundingToInt >= 66 && RoundingToInt <= 89)
         {
             CompareText2TMP.text = RoundingToInt + " / 100" + "\nGreat job!";
+            FindObjectOfType<AudioManager>().Play("SFX_Score66To89");
         }
 
         // 30 - 65 Score
         if (RoundingToInt >= 30 && RoundingToInt <= 65)
         {
             CompareText2TMP.text = RoundingToInt + " / 100" + "\nOkay";
+            FindObjectOfType<AudioManager>().Play("SFX_Score30To65");
         }
 
         // 10 - 29 Score
         if (RoundingToInt >= 10 && RoundingToInt <= 29)
         {
             CompareText2TMP.text = RoundingToInt + " / 100" + "\nCould be better";
+            FindObjectOfType<AudioManager>().Play("SFX_Score10To29");
         }
 
         // 0 - 9 Score
         if (RoundingToInt >= 0 && RoundingToInt <= 9)
         {
             CompareText2TMP.text = RoundingToInt + " / 100" + "\nYou can do better";
+            FindObjectOfType<AudioManager>().Play("SFX_Score0To10");
         }
 
         yield return new WaitForSeconds(0.5f);
