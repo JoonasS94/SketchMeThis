@@ -116,7 +116,7 @@ public class ResultsManager : MonoBehaviour
         Draw4PointsTMP.text = "" + fourthScore;
         EqualTMP.text = "" + finalPoints;
 
-        yield return new WaitForSeconds(1.45f);
+        yield return new WaitForSeconds(1.5f);
         Draw1PointsGameObject.gameObject.SetActive(true);
         yield return new WaitForSeconds(1f);
         Draw2PointsGameObject.gameObject.SetActive(true);
@@ -124,9 +124,9 @@ public class ResultsManager : MonoBehaviour
         Draw3PointsGameObject.gameObject.SetActive(true);
         yield return new WaitForSeconds(1f);
         Draw4PointsGameObject.gameObject.SetActive(true);
-        yield return new WaitForSeconds(2.4f);
+        yield return new WaitForSeconds(2.5f);
         EqualGameObject.gameObject.SetActive(true);
-        yield return new WaitForSeconds(0.76f);
+        yield return new WaitForSeconds(1f);
 
         // 1 star performance (0% - 32%)
         if (finalPoints >= 0 && finalPoints <= 128)

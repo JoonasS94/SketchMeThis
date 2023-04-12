@@ -41,7 +41,7 @@ public class Line4 : MonoBehaviour
 
             _renderer.positionCount++;
 
-            StartCoroutine(DrawSoundRandomize());
+            //StartCoroutine(DrawSoundRandomize());
 
             if (_renderer.positionCount >= 2)
             {

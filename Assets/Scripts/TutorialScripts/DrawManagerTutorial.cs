@@ -278,6 +278,7 @@ public class DrawManagerTutorial : MonoBehaviour
 
         CompareText2GameObject.GetComponent<TextMeshProUGUI>().enabled = true;
         CompareText2TMP.text = "Comparing...";
+        FindObjectOfType<AudioManager>().Play("SFX_UI_RESULTS");
 
         DrawingObject = GameObject.Find("DrawingObject");
         MeshRenderer[] meshRenderers = DrawingObject.GetComponentsInChildren<MeshRenderer>();

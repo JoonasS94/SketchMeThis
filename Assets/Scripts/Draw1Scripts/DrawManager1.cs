@@ -258,6 +258,7 @@ public class DrawManager1 : MonoBehaviour
         BackGround.GetComponent<MeshRenderer>().material = BackGroundStartingMaterial;
 
         yield return new WaitForSeconds(0.25f);
+        FindObjectOfType<AudioManager>().Play("SFX_UI_RESULTS");
         CompareTextGameObject.GetComponent<TextMeshProUGUI>().enabled = true;
 
         DrawingObject = GameObject.Find("DrawingObject");
@@ -269,7 +270,7 @@ public class DrawManager1 : MonoBehaviour
         }
 
         // Waiting amount so that player (may) get excited themselves
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(2.5f);
 
         foreach (MeshRenderer childRenderMeshes in meshRenderers)
         {
@@ -304,35 +305,30 @@ public class DrawManager1 : MonoBehaviour
         if (RoundingToInt >= 90)
         {
             CompareText2TMP.text = RoundingToInt + " / 100" + "\nFantastic work!";
-            FindObjectOfType<AudioManager>().Play("SFX_Score90To100");
         }
 
         // 66 - 89 Score
         if (RoundingToInt >= 66 && RoundingToInt <= 89)
         {
             CompareText2TMP.text = RoundingToInt + " / 100" + "\nGreat job!";
-            FindObjectOfType<AudioManager>().Play("SFX_Score66To89");
         }
 
         // 30 - 65 Score
         if (RoundingToInt >= 30 && RoundingToInt <= 65)
         {
             CompareText2TMP.text = RoundingToInt + " / 100" + "\nOkay";
-            FindObjectOfType<AudioManager>().Play("SFX_Score30To65");
         }
 
         // 10 - 29 Score
         if (RoundingToInt >= 10 && RoundingToInt <= 29)
         {
             CompareText2TMP.text = RoundingToInt + " / 100" + "\nCould be better";
-            FindObjectOfType<AudioManager>().Play("SFX_Score10To29");
         }
 
         // 0 - 9 Score
         if (RoundingToInt >= 0 && RoundingToInt <= 9)
         {
             CompareText2TMP.text = RoundingToInt + " / 100" + "\nYou can do better";
-            FindObjectOfType<AudioManager>().Play("SFX_Score0To10");
         }
 
         yield return new WaitForSeconds(0.5f);

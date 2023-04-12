@@ -799,9 +799,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 57b93cdb73ffc8c43a8f23bb6f89ebd2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 673338c1f533b22459c64c6fc75cb57c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1270,37 +1270,43 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: SFX_UI_TEXT_01
     clip: {fileID: 8300000, guid: 80c0aacb295e3624d9d301212dc6c13f, type: 3}
-    volume: 0.3
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: SFX_UI_TEXT_02
     clip: {fileID: 8300000, guid: d95a03422ca25674ebbe97dd1e3fad0d, type: 3}
-    volume: 0.3
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: SFX_UI_TEXT_03
     clip: {fileID: 8300000, guid: 485c1ffa090fb844197ec8e694a489f5, type: 3}
-    volume: 0.3
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: SFX_UI_TEXT_04
     clip: {fileID: 8300000, guid: 59b2c31b9ff4c2a4688b3eb78d94750e, type: 3}
-    volume: 0.3
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: SFX_UI_TEXT_05
     clip: {fileID: 8300000, guid: fe05aaefc0b35d74e82f4136b29bc7a1, type: 3}
-    volume: 0.3
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: SFX_UI_TEXT_06
     clip: {fileID: 8300000, guid: 0f9c9985499528549b308081515fef02, type: 3}
-    volume: 0.3
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_UI_RESULTS
+    clip: {fileID: 8300000, guid: 75321827723a00b43b2a4bcb71243f4e, type: 3}
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -1318,6 +1324,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1186786932
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1186786934}
+  - component: {fileID: 1186786933}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1186786933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186786932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79493f675865bcd4ebc12ef91c60ad8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1186786934
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186786932}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1356962681
 GameObject:

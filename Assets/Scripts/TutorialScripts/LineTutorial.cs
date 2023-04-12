@@ -53,7 +53,7 @@ public class LineTutorial : MonoBehaviour
 
             _renderer.positionCount++;
 
-            StartCoroutine(DrawSoundRandomize());
+            //StartCoroutine(DrawSoundRandomize());
 
             if (_renderer.positionCount >= 2)
             {
