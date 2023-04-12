@@ -12,6 +12,7 @@ public class Line2 : MonoBehaviour
     private Camera _cam;
     private GameObject RayCastHitDrawingTargetObject;
     private int RandomInkSound;
+    private bool DrawingSoundActive = false;
 
     void Start()
     {
@@ -39,6 +40,8 @@ public class Line2 : MonoBehaviour
             _points.Add(pos);
 
             _renderer.positionCount++;
+
+            StartCoroutine(DrawSoundRandomize());
 
             RandomInkSound = (Random.Range(1, 4));
 
@@ -96,6 +99,69 @@ public class Line2 : MonoBehaviour
 
             // Remember to change DrawManagerX.RESOLUTION depending on scene
             return Vector2.Distance(_renderer.GetPosition(_renderer.positionCount - 1), pos) > DrawManager2.RESOLUTION;
+        }
+    }
+
+    IEnumerator DrawSoundRandomize()
+    {
+        if (DrawingSoundActive == false)
+        {
+            DrawingSoundActive = true;
+
+            RandomInkSound = (Random.Range(1, 6));
+
+            if (RandomInkSound == 1)
+            {
+                FindObjectOfType<AudioManager>().Play("SFX_InkSound1");
+            }
+
+            if (RandomInkSound == 2)
+            {
+                FindObjectOfType<AudioManager>().Play("SFX_InkSound2");
+            }
+
+            if (RandomInkSound == 3)
+            {
+                FindObjectOfType<AudioManager>().Play("SFX_InkSound3");
+            }
+
+            if (RandomInkSound == 4)
+            {
+                FindObjectOfType<AudioManager>().Play("SFX_InkSound4");
+            }
+
+            if (RandomInkSound == 5)
+            {
+                FindObjectOfType<AudioManager>().Play("SFX_InkSound5");
+            }
+
+            if (RandomInkSound == 6)
+            {
+                FindObjectOfType<AudioManager>().Play("SFX_InkSound6");
+            }
+
+            if (RandomInkSound == 7)
+            {
+                FindObjectOfType<AudioManager>().Play("SFX_InkSound7");
+            }
+
+            if (RandomInkSound == 8)
+            {
+                FindObjectOfType<AudioManager>().Play("SFX_InkSound8");
+            }
+
+            if (RandomInkSound == 9)
+            {
+                FindObjectOfType<AudioManager>().Play("SFX_InkSound9");
+            }
+
+            if (RandomInkSound == 10)
+            {
+                FindObjectOfType<AudioManager>().Play("SFX_InkSound10");
+            }
+
+            yield return new WaitForSeconds(1f);
+            DrawingSoundActive = false;
         }
     }
 }

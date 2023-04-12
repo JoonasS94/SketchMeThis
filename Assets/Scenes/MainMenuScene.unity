@@ -1209,20 +1209,62 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: SFX_InkSound1
-    clip: {fileID: 0}
-    volume: 1
+    clip: {fileID: 8300000, guid: 377f9a6fdccb88a4587d9ae8453ff598, type: 3}
+    volume: 0.3
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: SFX_InkSound2
-    clip: {fileID: 0}
-    volume: 1
+    clip: {fileID: 8300000, guid: 4ad8357c0903c7e4097758b22d7f48c4, type: 3}
+    volume: 0.3
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: SFX_InkSound3
-    clip: {fileID: 0}
-    volume: 1
+    clip: {fileID: 8300000, guid: 4b0f2304fd697fb428ff5ee933785998, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_InkSound4
+    clip: {fileID: 8300000, guid: 8faab6600f5763442baa0511487c2686, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_InkSound5
+    clip: {fileID: 8300000, guid: e02e8e3e1110d424db3b6f1b989e0f0c, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_InkSound6
+    clip: {fileID: 8300000, guid: 922035dfeaabd7e47bd60fb9aa7b44bd, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_InkSound7
+    clip: {fileID: 8300000, guid: ea4c66161720785499da4e2fde871ab5, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_InkSound8
+    clip: {fileID: 8300000, guid: 11b9ff9905b54e0418135a2ed71cabef, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_InkSound9
+    clip: {fileID: 8300000, guid: 5b69b4b4ea80b64428b79480b465cb88, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_InkSound10
+    clip: {fileID: 8300000, guid: df136a949061a874db6ba9c1de5f8179, type: 3}
+    volume: 0.3
     pitch: 1
     loop: 0
     source: {fileID: 0}
