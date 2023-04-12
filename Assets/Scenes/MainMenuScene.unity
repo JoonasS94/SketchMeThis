@@ -1268,6 +1268,42 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: SFX_UI_TEXT_01
+    clip: {fileID: 8300000, guid: 80c0aacb295e3624d9d301212dc6c13f, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_UI_TEXT_02
+    clip: {fileID: 8300000, guid: d95a03422ca25674ebbe97dd1e3fad0d, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_UI_TEXT_03
+    clip: {fileID: 8300000, guid: 485c1ffa090fb844197ec8e694a489f5, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_UI_TEXT_04
+    clip: {fileID: 8300000, guid: 59b2c31b9ff4c2a4688b3eb78d94750e, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_UI_TEXT_05
+    clip: {fileID: 8300000, guid: fe05aaefc0b35d74e82f4136b29bc7a1, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_UI_TEXT_06
+    clip: {fileID: 8300000, guid: 0f9c9985499528549b308081515fef02, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!4 &1172117240
 Transform:
   m_ObjectHideFlags: 0

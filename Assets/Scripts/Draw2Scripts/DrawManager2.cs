@@ -220,6 +220,7 @@ public class DrawManager2 : MonoBehaviour
 
     IEnumerator StartGamePlay()
     {
+        FindObjectOfType<AudioManager>().Play("SFX_UI_TEXT_01");
         yield return new WaitForSeconds(3);
         StartTextGameObject.gameObject.SetActive(false);
         StartTextTMP.text = "Now draw it yourself!";
@@ -252,6 +253,7 @@ public class DrawManager2 : MonoBehaviour
 
     IEnumerator CompareResults()
     {
+        FindObjectOfType<AudioManager>().Play("SFX_UI_TEXT_02");
         stopDrawingArea.SetActive(false);
 
         BackGround.GetComponent<MeshRenderer>().material = BackGroundStartingMaterial;
@@ -296,6 +298,8 @@ public class DrawManager2 : MonoBehaviour
         CompareText2GameObject.GetComponent<TextMeshProUGUI>().enabled = true;
 
         yield return new WaitForSeconds(2.5f);
+
+        FindObjectOfType<AudioManager>().Play("SFX_UI_TEXT_03");
 
         // 90 - 100 Score
         if (RoundingToInt >= 90)
