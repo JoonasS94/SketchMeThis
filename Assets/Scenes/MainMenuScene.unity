@@ -1137,25 +1137,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: SFX_ButtonPress1
-    clip: {fileID: 8300000, guid: ef54731be92746f4a9205a7ab9838391, type: 3}
+    clip: {fileID: 8300000, guid: 450f80d596fa59544ad4359d9922f23b, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: SFX_ButtonPress2
-    clip: {fileID: 8300000, guid: 74c3adbfae0a0614881a1b518339fefb, type: 3}
+    clip: {fileID: 8300000, guid: 450f80d596fa59544ad4359d9922f23b, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: SFX_ButtonPress3
-    clip: {fileID: 8300000, guid: 97ce9e27b7d465647bfb2739329b1adc, type: 3}
+    clip: {fileID: 8300000, guid: 450f80d596fa59544ad4359d9922f23b, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: SFX_ButtonPress4
-    clip: {fileID: 8300000, guid: 6a9647a4483b2454c9dc9accc64fb6f9, type: 3}
+    clip: {fileID: 8300000, guid: 450f80d596fa59544ad4359d9922f23b, type: 3}
     volume: 1
     pitch: 1
     loop: 0
@@ -1191,19 +1191,19 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: SFX_1StarPerformance
-    clip: {fileID: 8300000, guid: b68b68ad20325f3418f7396977c94e4c, type: 3}
+    clip: {fileID: 8300000, guid: 6ed34f9e4ff81294c9bf3c26abb95623, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: SFX_2StarPerformance
-    clip: {fileID: 8300000, guid: 77993d4b4b777b04cb9ada1fa9c21690, type: 3}
+    clip: {fileID: 8300000, guid: 5f40ce181a14e7844b0c210d5d863d8f, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: SFX_3StarPerformance
-    clip: {fileID: 8300000, guid: be54f9f6f008ba14a9ced28063b594c7, type: 3}
+    clip: {fileID: 8300000, guid: f0afdc01a3a070442bf18af7632bd65f, type: 3}
     volume: 1
     pitch: 1
     loop: 0

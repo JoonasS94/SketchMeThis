@@ -91,7 +91,7 @@ public class Line4 : MonoBehaviour
         {
             DrawingSoundActive = true;
 
-            RandomInkSound = (Random.Range(1, 6));
+            RandomInkSound = (Random.Range(1, 11));
 
             if (RandomInkSound == 1)
             {

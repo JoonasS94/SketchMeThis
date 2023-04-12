@@ -106,7 +106,7 @@ public class LineTutorial : MonoBehaviour
         {
             DrawingSoundActive = true;
 
-            RandomInkSound = (Random.Range(1, 6));
+            RandomInkSound = (Random.Range(1, 11));
 
             if (RandomInkSound == 1)
             {

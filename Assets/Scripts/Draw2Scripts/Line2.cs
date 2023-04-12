@@ -43,23 +43,6 @@ public class Line2 : MonoBehaviour
 
             StartCoroutine(DrawSoundRandomize());
 
-            RandomInkSound = (Random.Range(1, 4));
-
-            if (RandomInkSound == 1)
-            {
-                FindObjectOfType<AudioManager>().Play("SFX_InkSound1");
-            }
-
-            if (RandomInkSound == 2)
-            {
-                FindObjectOfType<AudioManager>().Play("SFX_InkSound2");
-            }
-
-            if (RandomInkSound == 3)
-            {
-                FindObjectOfType<AudioManager>().Play("SFX_InkSound3");
-            }
-
             if (_renderer.positionCount >= 2)
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -108,7 +91,7 @@ public class Line2 : MonoBehaviour
         {
             DrawingSoundActive = true;
 
-            RandomInkSound = (Random.Range(1, 6));
+            RandomInkSound = (Random.Range(1, 11));
 
             if (RandomInkSound == 1)
             {

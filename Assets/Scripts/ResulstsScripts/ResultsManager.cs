@@ -90,6 +90,21 @@ public class ResultsManager : MonoBehaviour
 
         finalPoints = firstScore + secondScore + thirdScore + fourthScore;
 
+        if (finalPoints >= 0 && finalPoints <= 128)
+        {
+            FindObjectOfType<AudioManager>().Play("SFX_1StarPerformance");
+        }
+
+        if (finalPoints >= 129 && finalPoints <= 260)
+        {
+            FindObjectOfType<AudioManager>().Play("SFX_2StarPerformance");
+        }
+
+        if (finalPoints >= 261)
+        {
+            FindObjectOfType<AudioManager>().Play("SFX_3StarPerformance");
+        }
+
         Destroy(GameObject.Find("Score1"));
         Destroy(GameObject.Find("Score2"));
         Destroy(GameObject.Find("Score3"));
@@ -101,7 +116,7 @@ public class ResultsManager : MonoBehaviour
         Draw4PointsTMP.text = "" + fourthScore;
         EqualTMP.text = "" + finalPoints;
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.45f);
         Draw1PointsGameObject.gameObject.SetActive(true);
         yield return new WaitForSeconds(1f);
         Draw2PointsGameObject.gameObject.SetActive(true);
@@ -109,14 +124,13 @@ public class ResultsManager : MonoBehaviour
         Draw3PointsGameObject.gameObject.SetActive(true);
         yield return new WaitForSeconds(1f);
         Draw4PointsGameObject.gameObject.SetActive(true);
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(2.4f);
         EqualGameObject.gameObject.SetActive(true);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.76f);
 
         // 1 star performance (0% - 32%)
         if (finalPoints >= 0 && finalPoints <= 128)
         {
-            FindObjectOfType<AudioManager>().Play("SFX_1StarPerformance");
             Debug.Log("1 star performance");
             Points.gameObject.SetActive(false);
             CalculationMarkings.gameObject.SetActive(false);
@@ -130,7 +144,6 @@ public class ResultsManager : MonoBehaviour
         // 2 star performance (33% - 65%)
         if (finalPoints >= 129 && finalPoints <= 260)
         {
-            FindObjectOfType<AudioManager>().Play("SFX_2StarPerformance");
             Debug.Log("2 star performance");
             Points.gameObject.SetActive(false);
             CalculationMarkings.gameObject.SetActive(false);
@@ -145,7 +158,6 @@ public class ResultsManager : MonoBehaviour
         // 3 star performance (66% =<)
         if (finalPoints >= 261)
         {
-            FindObjectOfType<AudioManager>().Play("SFX_3StarPerformance");
             Debug.Log("3 star performance");
             Points.gameObject.SetActive(false);
             CalculationMarkings.gameObject.SetActive(false);
