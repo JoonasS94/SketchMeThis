@@ -32,7 +32,7 @@ public class DrawManager3 : MonoBehaviour
 
     // 100 / amount of mesh colliders in drawing
     // Remember to adjust value for each drawing
-    private float ratioNumber = 1.219512f;
+    private float ratioNumber = 1.2658f;
 
     private int RoundingToInt;
     private bool CompareResultsStarted = false;

@@ -2584,7 +2584,7 @@ GameObject:
   - component: {fileID: 8090377551568534994}
   - component: {fileID: 2982183578281240305}
   m_Layer: 0
-  m_Name: Spruce.033
+  m_Name: Spruce.032
   m_TagString: ScoreObjectTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2755,7 +2755,7 @@ GameObject:
   - component: {fileID: 7385658399567324743}
   - component: {fileID: 7672774151872551431}
   m_Layer: 0
-  m_Name: Spruce.030
+  m_Name: Spruce.029
   m_TagString: ScoreObjectTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2843,7 +2843,6 @@ Transform:
   - {fileID: 1306677937501594206}
   - {fileID: 2336506576338550152}
   - {fileID: 2575885204687233202}
-  - {fileID: 8100751229716175848}
   m_Father: {fileID: 416092653}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
@@ -2902,7 +2901,7 @@ GameObject:
   - component: {fileID: 315060448687579830}
   - component: {fileID: 8531146600063503770}
   m_Layer: 0
-  m_Name: Spruce.014
+  m_Name: Spruce.013
   m_TagString: ScoreObjectTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2921,7 +2920,7 @@ GameObject:
   - component: {fileID: 1741586873716872183}
   - component: {fileID: 467695476987572071}
   m_Layer: 0
-  m_Name: Spruce.023
+  m_Name: Spruce.022
   m_TagString: ScoreObjectTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3019,48 +3018,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!23 &986286421475593638
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4947648883567615604}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!64 &1025123992511319369
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3103,7 +3060,7 @@ GameObject:
   - component: {fileID: 8604573162270549427}
   - component: {fileID: 1025123992511319369}
   m_Layer: 0
-  m_Name: Spruce.034
+  m_Name: Spruce.033
   m_TagString: ScoreObjectTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3117,7 +3074,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6169041740537202418}
   m_LocalRotation: {x: 0.5, y: 0.49999997, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -3.351655e-17, y: -1.7754301, z: -0.05689519}
+  m_LocalPosition: {x: -0, y: -1.7754301, z: 0.156}
   m_LocalScale: {x: 0.093941376, y: 0.093941376, z: 0.056858733}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3286,7 +3243,7 @@ GameObject:
   - component: {fileID: 8310501857169287732}
   - component: {fileID: 6992743288561814627}
   m_Layer: 0
-  m_Name: Spruce.022
+  m_Name: Spruce.021
   m_TagString: ScoreObjectTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3478,7 +3435,7 @@ GameObject:
   - component: {fileID: 2735386378890535636}
   - component: {fileID: 4459490075768930366}
   m_Layer: 0
-  m_Name: Spruce.031
+  m_Name: Spruce.030
   m_TagString: ScoreObjectTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3507,7 +3464,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6248425530659585336}
   m_LocalRotation: {x: 0.5, y: 0.49999997, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -3.351655e-17, y: -1.7754301, z: -0.049633555}
+  m_LocalPosition: {x: -0, y: -1.7754301, z: -0.157}
   m_LocalScale: {x: 0.093941376, y: 0.093941376, z: 0.056858733}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3527,7 +3484,7 @@ GameObject:
   - component: {fileID: 8438402823807011719}
   - component: {fileID: 168141883395810916}
   m_Layer: 0
-  m_Name: Spruce.018
+  m_Name: Spruce.017
   m_TagString: ScoreObjectTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3738,7 +3695,7 @@ GameObject:
   - component: {fileID: 4722124738502981928}
   - component: {fileID: 2401328029519066946}
   m_Layer: 0
-  m_Name: Spruce.027
+  m_Name: Spruce.026
   m_TagString: ScoreObjectTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3912,7 +3869,7 @@ GameObject:
   - component: {fileID: 7495861706060493892}
   - component: {fileID: 6386754653185950920}
   m_Layer: 0
-  m_Name: Spruce.025
+  m_Name: Spruce.024
   m_TagString: ScoreObjectTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4001,7 +3958,7 @@ GameObject:
   - component: {fileID: 2989454543252382601}
   - component: {fileID: 3970724236234040476}
   m_Layer: 0
-  m_Name: Spruce.028
+  m_Name: Spruce.027
   m_TagString: ScoreObjectTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4065,7 +4022,7 @@ GameObject:
   - component: {fileID: 7145431639780542998}
   - component: {fileID: 7214312776302601641}
   m_Layer: 0
-  m_Name: Spruce.016
+  m_Name: Spruce.015
   m_TagString: ScoreObjectTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4121,7 +4078,7 @@ GameObject:
   - component: {fileID: 944250171501169237}
   - component: {fileID: 7035673488706698288}
   m_Layer: 0
-  m_Name: Spruce.019
+  m_Name: Spruce.018
   m_TagString: ScoreObjectTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4203,7 +4160,7 @@ GameObject:
   - component: {fileID: 8641904553732133898}
   - component: {fileID: 8414976436943992117}
   m_Layer: 0
-  m_Name: Spruce.012
+  m_Name: Spruce.011
   m_TagString: ScoreObjectTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4222,7 +4179,7 @@ GameObject:
   - component: {fileID: 5139570976167246869}
   - component: {fileID: 160411885620264299}
   m_Layer: 0
-  m_Name: Spruce.015
+  m_Name: Spruce.014
   m_TagString: ScoreObjectTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4241,7 +4198,7 @@ GameObject:
   - component: {fileID: 6291331326586172362}
   - component: {fileID: 7915956971698353298}
   m_Layer: 0
-  m_Name: Spruce.013
+  m_Name: Spruce.012
   m_TagString: ScoreObjectTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4285,14 +4242,6 @@ Transform:
   m_Father: {fileID: 543450651781549702}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4359822806494100540
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4947648883567615604}
-  m_Mesh: {fileID: 5282002569710988874, guid: e972bf4189348564a9c703a5c759f4e4, type: 3}
 --- !u!64 &4403792511636137669
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4320,7 +4269,7 @@ GameObject:
   - component: {fileID: 2982636972881835252}
   - component: {fileID: 5766274078120176003}
   m_Layer: 0
-  m_Name: Spruce.029
+  m_Name: Spruce.028
   m_TagString: ScoreObjectTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4339,7 +4288,7 @@ GameObject:
   - component: {fileID: 1393273777087812838}
   - component: {fileID: 3514800373224261021}
   m_Layer: 0
-  m_Name: Spruce.026
+  m_Name: Spruce.025
   m_TagString: ScoreObjectTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4493,25 +4442,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &4947648883567615604
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8100751229716175848}
-  - component: {fileID: 4359822806494100540}
-  - component: {fileID: 986286421475593638}
-  - component: {fileID: 7687241766705228995}
-  m_Layer: 0
-  m_Name: Spruce.035
-  m_TagString: ScoreObjectTag
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!64 &4981706633914805966
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4775,7 +4705,7 @@ GameObject:
   - component: {fileID: 363188180933647210}
   - component: {fileID: 7465265401332018478}
   m_Layer: 0
-  m_Name: Spruce.032
+  m_Name: Spruce.031
   m_TagString: ScoreObjectTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4995,7 +4925,7 @@ GameObject:
   - component: {fileID: 1453806354198149868}
   - component: {fileID: 3338726202967203091}
   m_Layer: 0
-  m_Name: Spruce.020
+  m_Name: Spruce.019
   m_TagString: ScoreObjectTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5014,7 +4944,7 @@ GameObject:
   - component: {fileID: 1482883347610617500}
   - component: {fileID: 8917746436519633897}
   m_Layer: 0
-  m_Name: Spruce.011
+  m_Name: Spruce.010
   m_TagString: ScoreObjectTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5110,7 +5040,7 @@ GameObject:
   - component: {fileID: 2468573424265642153}
   - component: {fileID: 8284436109048845876}
   m_Layer: 0
-  m_Name: Spruce.024
+  m_Name: Spruce.023
   m_TagString: ScoreObjectTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5342,20 +5272,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4858414702989866883, guid: e972bf4189348564a9c703a5c759f4e4, type: 3}
---- !u!64 &7687241766705228995
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4947648883567615604}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 5282002569710988874, guid: e972bf4189348564a9c703a5c759f4e4, type: 3}
 --- !u!4 &7773450162169540015
 Transform:
   m_ObjectHideFlags: 0
@@ -5406,7 +5322,7 @@ GameObject:
   - component: {fileID: 1772386257733429104}
   - component: {fileID: 4403792511636137669}
   m_Layer: 0
-  m_Name: Spruce.017
+  m_Name: Spruce.016
   m_TagString: ScoreObjectTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5484,21 +5400,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!4 &8100751229716175848
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4947648883567615604}
-  m_LocalRotation: {x: 0.5, y: 0.49999997, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -3.351655e-17, y: -1.7754301, z: -0.012756245}
-  m_LocalScale: {x: 0.093941376, y: 0.093941376, z: 0.056858733}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 543450651781549702}
-  m_RootOrder: 33
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &8284436109048845876
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5961,7 +5862,7 @@ GameObject:
   - component: {fileID: 5788167463739171852}
   - component: {fileID: 2436688467411710310}
   m_Layer: 0
-  m_Name: Spruce.021
+  m_Name: Spruce.020
   m_TagString: ScoreObjectTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

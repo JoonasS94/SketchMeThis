@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: Team RATS
+  companyName: Team sketchy rats
   productName: Sketch me this
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
